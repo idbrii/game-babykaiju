@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Jump on the Warp Drive"
+config/name="Baby Kaiju"
 config/tags=PackedStringArray("2d", "created_by_me", "platformer")
 run/main_scene="res://levels/gym_movement.tscn"
 config/features=PackedStringArray("4.2")

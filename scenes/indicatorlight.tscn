@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://kk7hu0wu1ci2"]
+
+[ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="1_0puus"]
+[ext_resource type="Script" path="res://code/common/indicatorlight.gd" id="1_7nx3t"]
+[ext_resource type="Texture2D" uid="uid://b8x3rv8tdlcbm" path="res://assets/basic/Circle.png" id="2_dstfj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcn8l"]
+atlas = ExtResource("1_0puus")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmfeq"]
+atlas = ExtResource("1_0puus")
+region = Rect2(896, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1sitx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcn8l")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmfeq")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="indicatorlight" type="Node2D"]
+script = ExtResource("1_7nx3t")
+
+[node name="visual" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1sitx")
+animation = &"off"
+autoplay = "off"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 1, 0.403922, 1)
+energy = 0.2
+texture = ExtResource("2_dstfj")
+texture_scale = 0.2

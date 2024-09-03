@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://2jcqrr1elkn5"]
+
+[ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="1_avnwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ewen"]
+atlas = ExtResource("1_avnwq")
+region = Rect2(1280, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6mw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ewen")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ladder_section" type="AnimatedSprite2D"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d6mw5")
+offset = Vector2(0, 4)

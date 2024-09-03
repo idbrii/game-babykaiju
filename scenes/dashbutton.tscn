@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://biexfrp7xuhwa"]
+
+[ext_resource type="Script" path="res://code/platformer/dashbutton.gd" id="1_bjqfp"]
+[ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="2_3iui6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6kdo"]
+size = Vector2(41.7238, 29.7712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1nlj"]
+atlas = ExtResource("2_3iui6")
+region = Rect2(896, 449, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17hgj"]
+atlas = ExtResource("2_3iui6")
+region = Rect2(960, 449, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bws"]
+atlas = ExtResource("2_3iui6")
+region = Rect2(768, 449, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqito"]
+atlas = ExtResource("2_3iui6")
+region = Rect2(832, 449, 64, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf0qs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1nlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17hgj")
+}],
+"loop": true,
+"name": &"press_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqito")
+}],
+"loop": true,
+"name": &"press_red",
+"speed": 5.0
+}]
+
+[node name="dashbutton" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("anim")]
+script = ExtResource("1_bjqfp")
+activate_direction = Vector2(0, 1)
+anim = NodePath("../AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_n6kdo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pf0qs")
+animation = &"press_green"
+offset = Vector2(0, -31)

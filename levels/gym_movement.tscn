@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfg4sor4sotk6"]
+[gd_scene load_steps=9 format=3 uid="uid://cfg4sor4sotk6"]
 
 [ext_resource type="Script" path="res://code/platformer/world.gd" id="1_l458c"]
 [ext_resource type="PackedScene" uid="uid://dxeva15lnv7wm" path="res://code/platformer/platforms/TileMap.tscn" id="2"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cqindn5hr3fl7" path="res://code/platformer/platforms/CirclePlatform.tscn" id="6"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="9_5bsef"]
 [ext_resource type="Script" path="res://code/common/global_input.gd" id="10_cydg3"]
-[ext_resource type="PackedScene" uid="uid://bm114md7akjkr" path="res://scenes/ladder_static.tscn" id="11_0arue"]
-[ext_resource type="PackedScene" uid="uid://cdgc60xc3ow0e" path="res://scenes/common/door.tscn" id="12_jl0r2"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_l458c")
@@ -41,15 +39,6 @@ position = Vector2(512, 608)
 
 [node name="ScreenCamera" parent="." instance=ExtResource("3")]
 position = Vector2(-959, 541)
-
-[node name="Ladder" parent="." instance=ExtResource("11_0arue")]
-visible = false
-position = Vector2(-399, 554)
-grow_stage_delay_sec = 1.0
-
-[node name="Door" parent="." instance=ExtResource("12_jl0r2")]
-visible = false
-position = Vector2(-1712, 256)
 
 [node name="LevelRequirements" type="Node2D" parent="."]
 

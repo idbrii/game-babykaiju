@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c35kk0bcppn2a"]
 
-[ext_resource type="Script" path="res://code/platformer/world.gd" id="1_eo8mx"]
+[ext_resource type="Script" path="res://code/platformer/level.gd" id="1_eo8mx"]
 [ext_resource type="PackedScene" uid="uid://dxeva15lnv7wm" path="res://code/platformer/platforms/TileMap.tscn" id="2_ekkoa"]
 [ext_resource type="TileSet" uid="uid://ban40ag5hfqow" path="res://assets/hidef/kenney_abstract_platformer/tiles_abstractplatform.tres" id="3_wikcs"]
 [ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://code/platformer/Player.tscn" id="4_2px2l"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq8g35t6hsjf" path="res://code/platformer/platforms/MovingPlatform.tscn" id="7_d1qol"]
 [ext_resource type="PackedScene" uid="uid://cqindn5hr3fl7" path="res://code/platformer/platforms/CirclePlatform.tscn" id="8_fo6hc"]
 [ext_resource type="PackedScene" uid="uid://bm114md7akjkr" path="res://scenes/ladder_static.tscn" id="9_i2edk"]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_eo8mx")

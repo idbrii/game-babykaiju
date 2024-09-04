@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cfg4sor4sotk6"]
 
-[ext_resource type="Script" path="res://code/platformer/world.gd" id="1_l458c"]
+[ext_resource type="Script" path="res://code/platformer/level.gd" id="1_l458c"]
 [ext_resource type="PackedScene" uid="uid://dxeva15lnv7wm" path="res://code/platformer/platforms/TileMap.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://code/camera/ScreenCamera.tscn" id="3"]
 [ext_resource type="TileSet" uid="uid://cl4pd0rl4aalq" path="res://assets/pixelart/tiles_blocks.tres" id="3_6kmhb"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cqindn5hr3fl7" path="res://code/platformer/platforms/CirclePlatform.tscn" id="6"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="9_5bsef"]
 [ext_resource type="Script" path="res://code/common/global_input.gd" id="10_cydg3"]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_l458c")

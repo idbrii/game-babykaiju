@@ -1,6 +1,7 @@
 extends Node
 
 const Player = preload("res://code/platformer/Player.tscn")
+const DEFAULT_SPAWN_POS = Vector2(400, 300)
 
 var CHEATS_ENABLED := true
 
@@ -10,13 +11,24 @@ func _input(event: InputEvent):
     elif Input.is_action_just_pressed("quit_game"):
         get_tree().quit()
     elif event.is_action_pressed("spawn_player"):
-        var spawnpoint = get_tree().get_nodes_in_group("Spawnpoint")[0]
-        var ui = spawnpoint.find_child("WaitingForSpawn")
+        var spawn_position = DEFAULT_SPAWN_POS
+
+        ## Destroy existing player if there's any
+        var players = get_tree().get_nodes_in_group("Player")
+        if players and players.size() > 0:
+            players[0].queue_free()
+
+        var spawn_points = get_tree().get_nodes_in_group("Spawnpoint")
+        if spawn_points and spawn_points.size() > 0:
+            spawn_position = spawn_points[0].global_position
+
+        var ui = owner.find_child("WaitingForSpawn")
         if ui:
             ui.visible = false
         var p = Player.instantiate()
         p.setup_input(event)
-        spawnpoint.add_child(p)
+        get_tree().root.add_child(p)
+        p.global_position = spawn_position
     elif CHEATS_ENABLED:
         _cheat_input(event)
 

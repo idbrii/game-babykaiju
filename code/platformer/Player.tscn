@@ -157,7 +157,7 @@ libraries = {
 position = Vector2(0, -32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mmpgr")
-animation = &"ladder"
+animation = &"jump"
 offset = Vector2(0, -12)
 flip_h = true
 

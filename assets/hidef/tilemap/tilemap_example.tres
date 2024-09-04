@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://da1mj5hjtrv1q"]
 
-[ext_resource type="Texture2D" uid="uid://de8yga4whlg7v" path="res://assets/hidef/tilemap/godot-example-tileset.png" id="1_orpny"]
+[ext_resource type="Texture2D" uid="uid://bbx3pc2qnscmm" path="res://assets/hidef/tilemap/tileset.png" id="1_72b6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1io4"]
-texture = ExtResource("1_orpny")
+texture = ExtResource("1_72b6e")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/terrain_set = 0

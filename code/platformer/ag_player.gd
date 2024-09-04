@@ -22,7 +22,7 @@ func _ready() -> void:
 
 
 func _on_facing_flipped(should_face_right):
-    _sprite_animator.flip_h = should_face_right
+    _sprite_animator.flip_h = not should_face_right
     if should_face_right:
         _sprite_arms.scale.x = 1
     else:
@@ -172,7 +172,7 @@ func _enter_state_land(_data):
     sm.transition_to(states.ground_idle, {})
 
 func _enter_state_dash(_data):
-    _play_anim("dash_left")
+    _play_anim("dash")
 
 func _enter_state_ground_idle(_data):
     _play_anim("idle")

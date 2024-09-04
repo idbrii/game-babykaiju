@@ -5,6 +5,7 @@ extends Node2D
 @onready var _player := get_node(player_path)
 @onready var _scale_animator := $AnimationPlayer
 @onready var _sprite_animator := $AnimatedSprite2D
+@onready var _sprite_arms := $AnimatedSprite2D/arm_root
 
 @onready var sm := StateMachine.create(self, states)
 
@@ -22,6 +23,10 @@ func _ready() -> void:
 
 func _on_facing_flipped(should_face_right):
     _sprite_animator.flip_h = should_face_right
+    if should_face_right:
+        _sprite_arms.scale.x = 1
+    else:
+        _sprite_arms.scale.x = -1
 
 func _is_falling(vel):
     return vel.y > 0

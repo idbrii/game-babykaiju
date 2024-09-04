@@ -66,3 +66,5 @@ tile_set = ExtResource("5_05t2i")
 
 [node name="KaijuBaby" parent="." instance=ExtResource("7_2mjom")]
 position = Vector2(-1577, 894)
+drop_impulse = null
+drop_uplift = null

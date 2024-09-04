@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5ogj7gf3f76"]
+[gd_scene load_steps=6 format=3 uid="uid://c5ogj7gf3f76"]
 
 [ext_resource type="Texture2D" uid="uid://8lyetl5k6apx" path="res://assets/hidef/kaijus/kaiju-baby.png" id="1_7vbg1"]
+[ext_resource type="Script" path="res://code/platformer/grabbable.gd" id="1_v183x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yp6dw"]
 size = Vector2(63.5, 60)
@@ -24,7 +25,10 @@ animations = [{
 collision_layer = 4
 collision_mask = 7
 lock_rotation = true
-linear_damp = 2.0
+linear_damp = 1.5
+script = ExtResource("1_v183x")
+drop_impulse = null
+drop_uplift = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.25, -30)

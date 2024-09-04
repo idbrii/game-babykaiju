@@ -52,8 +52,9 @@ var INPUT_MAP := {
     "gamepad": {
         "controls": {
             "jump":       [JOY_BUTTON_A],
-            "slow":       [JOY_BUTTON_B],
-            "dash":       [JOY_BUTTON_X],
+            "grab":       [JOY_BUTTON_X],
+            "slow":       [JOY_BUTTON_Y],
+            "dash":       [JOY_BUTTON_B],
             "walk_left":  [Baton.JoyAxis(JOY_AXIS_LEFT_X, -1)],
             "walk_right": [Baton.JoyAxis(JOY_AXIS_LEFT_X, 1)],
             "walk_up":    [Baton.JoyAxis(JOY_AXIS_LEFT_Y, -1)],
@@ -64,6 +65,7 @@ var INPUT_MAP := {
     "keyboard": {
         "controls": {
             "jump":       [KEY_UP, KEY_W, KEY_SPACE],
+            "grab":       [KEY_F, KEY_K],
             "slow":       [KEY_SHIFT],
             "dash":       [KEY_J],
             "walk_left":  [KEY_A, KEY_LEFT],
@@ -102,6 +104,8 @@ func get_input() -> Dictionary:
             "just_dash": false,
             "hold_dash": false,
             "released_dash": false,
+            "just_grab": false,
+            "hold_grab": false,
         }
     return {
         "move": _input.get_vector("move"),
@@ -112,6 +116,8 @@ func get_input() -> Dictionary:
         "just_dash": _input.is_action_just_pressed("dash"),
         "hold_dash": _input.is_action_pressed("dash"),
         "released_dash": _input.is_action_just_released("dash"),
+        "just_grab": _input.is_action_just_pressed("grab"),
+        "hold_grab": _input.is_action_pressed("grab"),
     }
 
 
@@ -130,16 +136,33 @@ func setup_input(event: InputEvent):
 
 
 func _physics_process(dt: float) -> void:
+    var input = get_input()
+
     sm.tick(dt)
     _tick_timers(dt)
 
+    var is_reaching = input.hold_grab
+    _grab_arms.visible = is_reaching
+
     var collided := move_and_slide()
     if collided:
-        for i in get_slide_collision_count():
-            var col = get_slide_collision(i)
-            if col.get_collider().is_in_group("pushable"):
-                var push_force = col.get_normal() * -push_strength
-                col.get_collider().apply_force(push_force)
+        if is_reaching and not _held_object:
+            for i in get_slide_collision_count():
+                var col = get_slide_collision(i)
+                var body = col.get_collider()
+                if body.is_in_group("pushable"):
+                    grab_object(body)
+                    break
+        else:
+            for i in get_slide_collision_count():
+                var col = get_slide_collision(i)
+                var body = col.get_collider()
+                if body.is_in_group("pushable"):
+                    var push_force = col.get_normal() * -push_strength
+                    col.get_collider().apply_force(push_force)
+
+    if _held_object and not is_reaching:
+        drop_held_object()
 
 
 # State Machine {{{1
@@ -450,3 +473,23 @@ func climb_movement(dt: float) -> void:
         velocity.y = y_state.vel
     if x_state.should_abort and y_state.should_abort:
         return
+
+
+# Grabbing {{{1
+@onready var _grab_arms := $"%arm_root/grab_arms"
+@onready var _hold_marker := $"%arm_root/hold_marker"
+var _held_object : RigidBody2D
+
+func grab_object(target):
+    drop_held_object()
+    _held_object = target
+    _held_object.acquire(self)
+
+func drop_held_object():
+    if _held_object:
+        _held_object.release(self)
+    _held_object = null
+    _grab_arms.visible = false
+
+func get_hold_marker():
+    return _hold_marker

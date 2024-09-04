@@ -395,4 +395,3 @@ func climb_movement(dt: float) -> void:
         velocity.y = y_state.vel
     if x_state.should_abort and y_state.should_abort:
         return
-

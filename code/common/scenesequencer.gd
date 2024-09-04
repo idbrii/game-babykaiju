@@ -36,5 +36,3 @@ func _allow_complete():
     # Delay a second before you can transition again to prevent double transitions.
     await get_tree().create_timer(1).timeout
     can_complete = true
-
-

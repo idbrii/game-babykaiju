@@ -81,4 +81,3 @@ static func always_true(_data):
 static func always_false(_data):
     return false
 # }}}
-

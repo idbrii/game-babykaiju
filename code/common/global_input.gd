@@ -1,5 +1,7 @@
 extends Node
 
+const Player = preload("res://code/platformer/Player.tscn")
+
 var CHEATS_ENABLED := true
 
 func _input(event: InputEvent):
@@ -7,6 +9,14 @@ func _input(event: InputEvent):
         _swap_fullscreen_mode()
     elif Input.is_action_just_pressed("quit_game"):
         get_tree().quit()
+    elif event.is_action_pressed("spawn_player"):
+        var spawnpoint = get_tree().get_nodes_in_group("Spawnpoint")[0]
+        var ui = spawnpoint.find_child("WaitingForSpawn")
+        if ui:
+            ui.visible = false
+        var p = Player.instantiate()
+        p.setup_input(event)
+        spawnpoint.add_child(p)
     elif CHEATS_ENABLED:
         _cheat_input(event)
 

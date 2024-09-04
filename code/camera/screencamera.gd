@@ -25,4 +25,3 @@ func _grab_target():
     var players = get_tree().get_nodes_in_group("Player")
     if players:
         target = players[0]
-

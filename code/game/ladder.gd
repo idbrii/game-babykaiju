@@ -40,4 +40,3 @@ func grow(length):
         $Area2D/CollisionShape2D.position = shape_pos
         if grow_stage_delay_sec > 0:
             await get_tree().create_timer(grow_stage_delay_sec).timeout
-

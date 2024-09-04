@@ -39,10 +39,45 @@ var _block_input := false
 @export var jump_coyote : float = 0.08
 @export var jump_buffer : float = 0.1
 
+var _input : Baton
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
+
+var INPUT_MAP := {
+    "gamepad": {
+        "controls": {
+            "jump":       [JOY_BUTTON_A],
+            "slow":       [JOY_BUTTON_B],
+            "dash":       [JOY_BUTTON_X],
+            "walk_left":  [Baton.JoyAxis(JOY_AXIS_LEFT_X, -1)],
+            "walk_right": [Baton.JoyAxis(JOY_AXIS_LEFT_X, 1)],
+            "walk_up":    [Baton.JoyAxis(JOY_AXIS_LEFT_Y, -1)],
+            "walk_down":  [Baton.JoyAxis(JOY_AXIS_LEFT_Y, 1)],
+        },
+        "device": 0,
+    },
+    "keyboard": {
+        "controls": {
+            "jump":       [KEY_UP, KEY_W, KEY_SPACE],
+            "slow":       [KEY_SHIFT],
+            "dash":       [KEY_J],
+            "walk_left":  [KEY_A, KEY_LEFT],
+            "walk_right": [KEY_D, KEY_RIGHT],
+            "walk_up":    [KEY_W, KEY_UP],
+            "walk_down":  [KEY_S, KEY_DOWN],
+        },
+    },
+    "pairs": {
+        "horizontal": ["walk_left", "walk_right"],
+        "vertical":   ["walk_down", "walk_up"],
+    },
+    "quads": {
+        "move": ["walk_left", "walk_right", "walk_down", "walk_up"],
+    },
+    "deadzone": 0.5,
+}
 
 @onready var sm := StateMachine.create(self, states)
 
@@ -56,8 +91,7 @@ func set_block_input(should_block):
 func get_input() -> Dictionary:
     if _block_input:
         return {
-            "x": 0.0,
-            "y": 0.0,
+            "move": Vector2.ZERO,
             "just_jump": false,
             "jump": false,
             "released_jump": false,
@@ -67,21 +101,30 @@ func get_input() -> Dictionary:
             "released_dash": false,
         }
     return {
-        "x": Input.get_axis("move_left", "move_right"),
-        "y": Input.get_axis("move_up", "move_down"),
-        "just_jump": Input.is_action_just_pressed("jump"),
-        "jump": Input.is_action_pressed("jump"),
-        "released_jump": Input.is_action_just_released("jump"),
-        "walk": Input.is_action_pressed("walk"),
-        "just_dash": Input.is_action_just_pressed("dash"),
-        "hold_dash": Input.is_action_pressed("dash"),
-        "released_dash": Input.is_action_just_released("dash"),
+        "move": _input.get_vector("move"),
+        "just_jump": _input.is_action_just_pressed("jump"),
+        "jump": _input.is_action_pressed("jump"),
+        "released_jump": _input.is_action_just_released("jump"),
+        "walk": _input.is_action_pressed("slow"),
+        "just_dash": _input.is_action_just_pressed("dash"),
+        "hold_dash": _input.is_action_pressed("dash"),
+        "released_dash": _input.is_action_just_released("dash"),
     }
 
 
 func _ready() -> void:
+    if not _input:
+        printt("[Player] Creating fallback Baton for player that consumes all inputs.", self)
+        # Setup default input for convenient placing of player in test levels. It
+        # should normally be overridden on spawn in setup_input.
+        _input = Baton.new(INPUT_MAP)
     sm.add_label($ui_root/label_bookmark)
     sm.transition_to(states.freestyle, {})
+
+
+func setup_input(event: InputEvent):
+    _input = Baton.new(Baton.filter_for_input_device(INPUT_MAP, event))
+
 
 func _physics_process(dt: float) -> void:
     sm.tick(dt)
@@ -91,33 +134,35 @@ func _physics_process(dt: float) -> void:
 
 # State Machine {{{1
 
-# funcs.gd {{{2
-# TODO: I don't know how to reference these as variables.
-static func always_true(_data):
+# basic funcs {{{2
+# Can't reference these as vars from another file, so copypasted here.
+static func always_true0():
     return true
-static func always_false(_data):
+static func always_true1(_data):
+    return true
+static func always_false1(_data):
     return false
 # }}}
 
 # State Machine Data {{{1
 var states := {
     default_state = {
-        enter = always_true,
-        update = always_true,
-        exit = always_true,
-        is_supported = always_true,
+        enter = always_true1,
+        update = always_true1,
+        exit = always_true1,
+        is_supported = always_true0,
     },
     freestyle = {
         enter = _enter_state_freestyle,
         update = _update_state_freestyle,
-        exit = always_true,
+        exit = always_true1,
         is_supported = _state_is_supported_by_floor,
     },
     climb = {
         enter = _enter_state_climb,
         update = _update_state_climb,
-        exit = always_true,
-        is_supported = always_true,
+        exit = always_true1,
+        is_supported = always_true0,
     },
 }
 
@@ -132,7 +177,7 @@ func _enter_state_freestyle(_data):
 
 func _update_state_freestyle(dt):
     var input = get_input()
-    if not input.jump and can_climb and abs(input.y) > 0:
+    if not input.jump and can_climb and abs(input.move.y) > 0:
         sm.transition_to(states.climb, {})
         return
     x_movement(dt)
@@ -176,7 +221,7 @@ func accelerate_from_input(dt, state, input, fwd_accel, rev_accel):
 
 func x_movement(dt: float) -> void:
     var input = get_input()
-    var x_val = input.x
+    var x_val = input.move.x
     var x_abs = abs(x_val)
     var x_sign = sign(x_val)
     var x_int = int(ceil(x_abs) * x_sign)
@@ -321,7 +366,7 @@ func dash_logic(_dt):
     elif input.just_dash and expired(dash_cooldown_timer):
         _is_dashing = true
         dash_duration_timer = dash_duration
-        var dir = Vector2(input.x, input.y)
+        var dir = input.move
         if dir.is_zero_approx():
             dir = velocity
         if dir.is_zero_approx():
@@ -378,8 +423,8 @@ func climb_movement(dt: float) -> void:
         vel = velocity.y,
         max_speed = max_climb_speed,
     })
-    brake_from_drag(dt, x_state, input.x, drag_deceleration)
-    brake_from_drag(dt, y_state, input.y, drag_deceleration)
+    brake_from_drag(dt, x_state, input.move.x, drag_deceleration)
+    brake_from_drag(dt, y_state, input.move.y, drag_deceleration)
     if x_state.should_apply and y_state.should_apply:
         velocity.x = x_state.vel
         velocity.y = y_state.vel
@@ -387,12 +432,11 @@ func climb_movement(dt: float) -> void:
 
     reset_state(x_state)
     reset_state(y_state)
-    accelerate_from_input(dt, x_state, input.x, acceleration, turning_acceleration)
-    accelerate_from_input(dt, y_state, input.y, acceleration, turning_acceleration)
+    accelerate_from_input(dt, x_state, input.move.x, acceleration, turning_acceleration)
+    accelerate_from_input(dt, y_state, input.move.y, acceleration, turning_acceleration)
     if x_state.should_apply:
         velocity.x = x_state.vel
     if y_state.should_apply:
         velocity.y = y_state.vel
     if x_state.should_abort and y_state.should_abort:
         return
-

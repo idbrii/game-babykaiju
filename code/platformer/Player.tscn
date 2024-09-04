@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvboky6pqlyk0"]
+[gd_scene load_steps=13 format=3 uid="uid://cvboky6pqlyk0"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_r4v6y"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_u33gy"]
 [ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="3_1ibud"]
-[ext_resource type="Script" path="res://code/common/global_input.gd" id="4_6ceok"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(69, 71)
@@ -98,6 +97,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ywvhr")
+}],
+"loop": true,
+"name": &"ladder",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_f2ae3")
 }],
 "loop": true,
@@ -110,8 +117,6 @@ z_index = 10
 collision_mask = 14
 floor_snap_length = 16.0
 script = ExtResource("1_r4v6y")
-max_walk_speed = 100.0
-max_run_speed = 300.0
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -43.5)
@@ -150,7 +155,7 @@ libraries = {
 position = Vector2(0, -32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mmpgr")
-animation = &"run"
+animation = &"ladder"
 offset = Vector2(0, -12)
 flip_h = true
 
@@ -164,6 +169,3 @@ offset_left = -50.0
 offset_top = -69.0
 offset_right = -50.0
 offset_bottom = -69.0
-
-[node name="global_input" type="Node" parent="."]
-script = ExtResource("4_6ceok")

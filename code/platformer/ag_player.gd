@@ -39,54 +39,54 @@ func _play_fx(anim):
     _scale_animator.play(anim)
 
 
-# funcs.gd {{{2
-# TODO: I don't know how to reference these as variables.
-static func always_true(_data):
+# basic funcs {{{2
+# Can't reference these as vars from another file, so copypasted here.
+static func always_true1(_data):
     return true
-static func always_false(_data):
+static func always_false1(_data):
     return false
 # }}}
 
 var states := {
     default_state = {
-        enter = always_true,
-        update = always_true,
-        exit = always_true,
+        enter = always_true1,
+        update = always_true1,
+        exit = always_true1,
     },
     ground_idle = {
         enter = _enter_state_ground_idle,
         update = _update_state_ground_idle,
-        exit = always_true,
+        exit = always_true1,
     },
     ground_run = {
         enter = _enter_state_ground_run,
         update = _update_state_ground_run,
-        exit = always_true,
+        exit = always_true1,
     },
     climb = {
         enter = _enter_state_climb,
         update = _update_state_climb,
-        exit = always_true,
+        exit = always_true1,
     },
     jump = {
         enter = _enter_state_jump,
         update = _update_state_jump,
-        exit = always_true,
+        exit = always_true1,
     },
     fall = {
         enter = _enter_state_fall,
         update = _update_state_fall,
-        exit = always_true,
+        exit = always_true1,
     },
     land = {
         enter = _enter_state_land,
-        update = always_true,
-        exit = always_true,
+        update = always_true1,
+        exit = always_true1,
     },
     dash = {
         enter = _enter_state_dash,
         update = _update_state_dash,
-        exit = always_true,
+        exit = always_true1,
     },
 }
 

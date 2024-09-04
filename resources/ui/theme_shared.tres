@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b2iihkgpykjvu"]
+
+[ext_resource type="FontFile" uid="uid://cuiwgjywm40kq" path="res://assets/pixelart/font/humblegold/ruler.ttf" id="1_y70q2"]
+
+[resource]
+default_font = ExtResource("1_y70q2")
+default_font_size = 26
+Label/fonts/font = ExtResource("1_y70q2")

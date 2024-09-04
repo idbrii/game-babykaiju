@@ -9,7 +9,6 @@
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="9_5bsef"]
 [ext_resource type="Script" path="res://code/common/global_input.gd" id="10_cydg3"]
 
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_l458c")
 

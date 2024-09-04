@@ -1,0 +1,2 @@
+disable: [class-definitions-order, no-elif-return]
+max-line-length: 200

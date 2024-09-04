@@ -97,6 +97,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ywvhr")
+}],
+"loop": true,
+"name": &"ladder",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_f2ae3")
 }],
 "loop": true,
@@ -147,7 +155,7 @@ libraries = {
 position = Vector2(0, -32)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_mmpgr")
-animation = &"run"
+animation = &"ladder"
 offset = Vector2(0, -12)
 flip_h = true
 

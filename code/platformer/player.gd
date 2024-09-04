@@ -39,6 +39,9 @@ var _block_input := false
 @export var jump_coyote : float = 0.08
 @export var jump_buffer : float = 0.1
 
+@export_group("Push")
+@export_range(100, 100000) var push_strength: float = 10000.0
+
 var _input : Baton
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
@@ -129,7 +132,14 @@ func setup_input(event: InputEvent):
 func _physics_process(dt: float) -> void:
     sm.tick(dt)
     _tick_timers(dt)
-    move_and_slide()
+
+    var collided := move_and_slide()
+    if collided:
+        for i in get_slide_collision_count():
+            var col = get_slide_collision(i)
+            if col.get_collider().is_in_group("pushable"):
+                var push_force = col.get_normal() * -push_strength
+                col.get_collider().apply_force(push_force)
 
 
 # State Machine {{{1

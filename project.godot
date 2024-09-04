@@ -33,6 +33,10 @@ window/size/fullscreen=true
 
 enabled=PackedStringArray("res://addons/godot_sparrow/plugin.cfg", "res://addons/toggle-external-editor/plugin.cfg")
 
+[global_group]
+
+pushable="Objects that can be pushed by the player."
+
 [importer_defaults]
 
 texture={

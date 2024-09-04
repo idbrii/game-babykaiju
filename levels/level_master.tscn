@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://6kmyxv4i2xvj"]
+
+[ext_resource type="Script" path="res://code/platformer/world.gd" id="1_gf4wa"]
+[ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://code/camera/ScreenCamera.tscn" id="2_jjd53"]
+[ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="3_65iuj"]
+[ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://code/platformer/Player.tscn" id="4_6ci74"]
+[ext_resource type="Script" path="res://code/common/global_input.gd" id="5_ml8qp"]
+[ext_resource type="PackedScene" uid="uid://ciih7ia18d4fq" path="res://levels/level_0.tscn" id="6_usjui"]
+[ext_resource type="PackedScene" uid="uid://dpccu5sotdvbt" path="res://levels/level_1.tscn" id="7_sckau"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_gf4wa")
+
+[node name="ScreenCamera" parent="." instance=ExtResource("2_jjd53")]
+position = Vector2(-959, 541)
+
+[node name="LevelRequirements" type="Node2D" parent="."]
+
+[node name="Spawnpoint" type="Marker2D" parent="LevelRequirements" groups=["Spawnpoint"]]
+position = Vector2(-1765, 896)
+
+[node name="WaitingForSpawn" type="CanvasLayer" parent="LevelRequirements/Spawnpoint"]
+process_mode = 4
+
+[node name="Root" type="Control" parent="LevelRequirements/Spawnpoint/WaitingForSpawn"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_65iuj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="LevelRequirements/Spawnpoint/WaitingForSpawn/Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -11.5
+offset_right = 94.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Start/Enter to play"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="LevelRequirements/Spawnpoint" instance=ExtResource("4_6ci74")]
+max_run_speed = 560.0
+jump_force = 1200.0
+
+[node name="global_input" type="Node" parent="LevelRequirements"]
+script = ExtResource("5_ml8qp")
+
+[node name="Level0" parent="LevelRequirements" instance=ExtResource("6_usjui")]
+position = Vector2(-1920, 0)
+
+[node name="Level1" parent="LevelRequirements" instance=ExtResource("7_sckau")]

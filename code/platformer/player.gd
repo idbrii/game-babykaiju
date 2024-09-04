@@ -134,34 +134,34 @@ func _physics_process(dt: float) -> void:
 
 # State Machine {{{1
 
-# funcs.gd {{{2
-# TODO: I don't know how to reference these as variables.
+# basic funcs {{{2
+# Can't reference these as vars from another file, so copypasted here.
 static func always_true0():
     return true
-static func always_true(_data):
+static func always_true1(_data):
     return true
-static func always_false(_data):
+static func always_false1(_data):
     return false
 # }}}
 
 # State Machine Data {{{1
 var states := {
     default_state = {
-        enter = always_true,
-        update = always_true,
-        exit = always_true,
+        enter = always_true1,
+        update = always_true1,
+        exit = always_true1,
         is_supported = always_true0,
     },
     freestyle = {
         enter = _enter_state_freestyle,
         update = _update_state_freestyle,
-        exit = always_true,
+        exit = always_true1,
         is_supported = _state_is_supported_by_floor,
     },
     climb = {
         enter = _enter_state_climb,
         update = _update_state_climb,
-        exit = always_true,
+        exit = always_true1,
         is_supported = always_true0,
     },
 }

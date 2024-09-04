@@ -72,12 +72,3 @@ func find_state_name(state) -> String:
 # call from _process or _physics_process.
 func tick(dt):
     current_state.update.call(dt)
-
-
-# funcs.gd {{{2
-# TODO: I don't know how to reference these as variables.
-static func always_true(_data):
-    return true
-static func always_false(_data):
-    return false
-# }}}

@@ -109,8 +109,6 @@ z_index = 10
 collision_mask = 14
 floor_snap_length = 16.0
 script = ExtResource("1_r4v6y")
-max_walk_speed = 100.0
-max_run_speed = 300.0
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -43.5)

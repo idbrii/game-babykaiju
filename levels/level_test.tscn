@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://hve3qax2kqil"]
+[gd_scene load_steps=8 format=4 uid="uid://hve3qax2kqil"]
 
 [ext_resource type="Script" path="res://code/platformer/level.gd" id="1_k84m8"]
 [ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://code/platformer/Player.tscn" id="4_lpyfe"]
@@ -65,6 +65,5 @@ tile_map_data = PackedByteArray("AADi/xAAAgAAAAIAAADi/w8AAgAEAAIAAADi/w4AAgAEAAE
 tile_set = ExtResource("5_05t2i")
 
 [node name="KaijuBaby" parent="." instance=ExtResource("7_2mjom")]
-position = Vector2(-1577, 894)
-drop_impulse = null
+position = Vector2(-1590, 898)
 drop_uplift = null

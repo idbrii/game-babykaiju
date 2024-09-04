@@ -31,7 +31,7 @@ window/size/fullscreen=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/toggle-external-editor/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_sparrow/plugin.cfg", "res://addons/toggle-external-editor/plugin.cfg")
 
 [importer_defaults]
 

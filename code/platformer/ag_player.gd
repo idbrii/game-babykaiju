@@ -5,7 +5,8 @@ extends Node2D
 @onready var _player := get_node(player_path)
 @onready var _scale_animator := $AnimationPlayer
 @onready var _sprite_animator := $AnimatedSprite2D
-@onready var _sprite_arms := $AnimatedSprite2D/arm_root
+@onready var _sprite_arms := $"%arm_root"
+@onready var _arms_animator := $"%arm_root/grab_arms"
 
 @onready var sm := StateMachine.create(self, states)
 
@@ -43,6 +44,9 @@ func _play_anim(anim):
     _sprite_animator.play(anim)
 func _play_fx(anim):
     _scale_animator.play(anim)
+func _play_arms_anim(anim):
+    _arms_animator.set_frame_and_progress(0, 0)  # ensure we're restarting the arms so they line up with body
+    _arms_animator.play(anim)
 
 
 # basic funcs {{{2
@@ -186,6 +190,7 @@ func _enter_state_dash(_data):
 
 func _enter_state_ground_idle(_data):
     _play_anim("idle")
+    _play_arms_anim("idlearms")
 
 func _enter_state_ground_run(_data):
     _play_anim("run")

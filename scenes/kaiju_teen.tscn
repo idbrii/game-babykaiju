@@ -11,7 +11,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiv0d"]
 radius = 42.0
-height = 193.0
+height = 183.0
 
 [sub_resource type="Animation" id="3"]
 resource_name = "Jump"
@@ -90,7 +90,7 @@ max_climb_speed = null
 climb_jump_speed = null
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
-position = Vector2(0, -96.5)
+position = Vector2(0, -92)
 shape = SubResource("CapsuleShape2D_eiv0d")
 
 [node name="visual" type="Node2D" parent="."]

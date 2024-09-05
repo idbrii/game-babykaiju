@@ -127,8 +127,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
 position = Vector2(-26.5, -172)
 sprite_frames = ExtResource("2_5fgqu")
-animation = &"walk"
-frame_progress = 0.960201
+animation = &"idle"
 offset = Vector2(0, -12)
 
 [node name="placeholder" type="Sprite2D" parent="visual"]

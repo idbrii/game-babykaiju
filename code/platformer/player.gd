@@ -514,6 +514,10 @@ func drop_held_object():
     _held_object = null
     _grab_arms.visible = false
 
+func get_held_body():
+    if _held_object:
+        return _held_object.get_body()
+
 func get_hold_marker():
     return _hold_marker
 

@@ -9,7 +9,7 @@
 size = Vector2(58, 65)
 
 [node name="KaijuBaby" type="RigidBody2D" groups=["Kaiju", "pushable"]]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 7
 gravity_scale = 3.0
 lock_rotation = true
@@ -26,7 +26,7 @@ script = ExtResource("2_txa02")
 unique_name_in_owner = true
 position = Vector2(-1, -32)
 sprite_frames = ExtResource("2_r17th")
-animation = &"idle"
+animation = &"eat"
 
 [node name="Grabbable" type="Node2D" parent="." node_paths=PackedStringArray("_facing_node")]
 script = ExtResource("1_v183x")

@@ -60,6 +60,7 @@ radius = 19.0263
 
 [node name="KaijuTeen" type="CharacterBody2D" groups=["Kaiju"]]
 z_index = 10
+collision_layer = 9
 collision_mask = 14
 floor_snap_length = 16.0
 script = ExtResource("1_lraxt")

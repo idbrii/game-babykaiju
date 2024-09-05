@@ -14,6 +14,10 @@ var target_marker : Node2D
 var current_holder : CharacterBody2D
 
 
+func get_body():
+    return _body
+
+
 func acquire(holder: PhysicsBody2D):
     is_held = true
     if _body is RigidBody2D:

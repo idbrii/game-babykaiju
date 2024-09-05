@@ -67,6 +67,10 @@ jump_force = 1500.0
 position = Vector2(-1, -31.5)
 shape = SubResource("CapsuleShape2D_0ff1r")
 
+[node name="grab_child_marker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -6)
+
 [node name="visual" type="Node2D" parent="."]
 position = Vector2(0, -6)
 script = ExtResource("2_u33gy")
@@ -93,15 +97,15 @@ offset = Vector2(0, -12)
 unique_name_in_owner = true
 position = Vector2(0, -14)
 
+[node name="hold_marker" type="Marker2D" parent="visual/arm_root"]
+position = Vector2(41, 10)
+
 [node name="grab_arms" type="AnimatedSprite2D" parent="visual/arm_root"]
 position = Vector2(19, 3)
 sprite_frames = ExtResource("4_u7qjc")
 animation = &"idlearm"
 autoplay = "idlearm"
 frame_progress = 0.586442
-
-[node name="hold_marker" type="Marker2D" parent="visual/arm_root"]
-position = Vector2(27, 0)
 
 [node name="Grabber" type="Area2D" parent="visual"]
 unique_name_in_owner = true
@@ -122,8 +126,11 @@ offset_top = -69.0
 offset_right = -50.0
 offset_bottom = -69.0
 
-[node name="Grabbable" type="Node2D" parent="."]
+[node name="Grabbable" type="Node2D" parent="." node_paths=PackedStringArray("_facing_node")]
 script = ExtResource("5_5r3n3")
+drop_impulse = 1000.0
+drop_uplift = 1000.0
+_facing_node = NodePath("../visual")
 
 [node name="HeadProtector" type="Area2D" parent="."]
 position = Vector2(0, -63)

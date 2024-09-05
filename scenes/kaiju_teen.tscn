@@ -124,6 +124,10 @@ position = Vector2(-400000, -94)
 position = Vector2(-7, -77)
 texture = ExtResource("2_rphmg")
 
+[node name="grab_child_marker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -6)
+
 [node name="ui_root" type="Node2D" parent="."]
 visible = false
 

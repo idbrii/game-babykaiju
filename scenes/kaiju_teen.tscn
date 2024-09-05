@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://pbf3l3hfrtbo"]
+[gd_scene load_steps=15 format=3 uid="uid://pbf3l3hfrtbo"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_lraxt"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_a3s2x"]
-[ext_resource type="Texture2D" uid="uid://dic7f6sbnqrru" path="res://assets/hidef/kaijus/kaiju-teen.png" id="2_rphmg"]
-[ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_ll3mm"]
+[ext_resource type="SpriteFrames" uid="uid://cn33bwblf3q2j" path="res://assets/anim/kaiju_teen/kaiju_teen.xml" id="3_07k72"]
 [ext_resource type="SpriteFrames" uid="uid://bw5ihp1jhds5f" path="res://assets/anim/p1_arm/p1_arm.xml" id="4_q6ra1"]
 [ext_resource type="Script" path="res://code/game/rideable.gd" id="6_ilp53"]
 [ext_resource type="Script" path="res://code/game/teenkaiju.gd" id="6_jrq0a"]
@@ -11,7 +10,7 @@
 [ext_resource type="Script" path="res://code/game/stomach.gd" id="9_p5hj7"]
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(94, 123)
+size = Vector2(94, 193)
 
 [sub_resource type="Animation" id="3"]
 resource_name = "Jump"
@@ -68,8 +67,8 @@ max_run_speed = 900.0
 jump_force = 2000.0
 has_feature_grab = false
 
-[node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -61.5)
+[node name="CharacterCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -96.5)
 shape = SubResource("2")
 
 [node name="visual" type="Node2D" parent="."]
@@ -89,10 +88,9 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
-position = Vector2(0, -14)
-sprite_frames = ExtResource("3_ll3mm")
-animation = &"jump"
-frame_progress = 0.904858
+position = Vector2(-5, -78)
+sprite_frames = ExtResource("3_07k72")
+animation = &"idle"
 offset = Vector2(0, -12)
 
 [node name="arm_root" type="Node2D" parent="visual/AnimatedSprite2D"]
@@ -107,11 +105,7 @@ sprite_frames = ExtResource("4_q6ra1")
 animation = &"idlearm"
 
 [node name="hold_marker" type="Marker2D" parent="visual/AnimatedSprite2D/arm_root"]
-position = Vector2(-400000, -94)
-
-[node name="placeholder" type="Sprite2D" parent="visual"]
-position = Vector2(-7, -77)
-texture = ExtResource("2_rphmg")
+position = Vector2(-1.9e+06, -68)
 
 [node name="grab_child_marker" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -134,14 +128,14 @@ collision_mask = 5
 script = ExtResource("6_ilp53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rideable"]
-position = Vector2(2, -113)
+position = Vector2(2, -183)
 shape = SubResource("RectangleShape2D_uxwhu")
 
 [node name="TeenKaiju" type="Node2D" parent="."]
 script = ExtResource("6_jrq0a")
 
 [node name="HeadProtector" type="Area2D" parent="."]
-position = Vector2(0, -123)
+position = Vector2(0, -188)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("8_7p17h")

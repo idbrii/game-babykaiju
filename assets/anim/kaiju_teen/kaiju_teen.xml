@@ -1,0 +1,26 @@
+
+<TextureAtlas imagePath="teen_fall.png">
+	<SubTexture name="fall0000" x="0" y="0" w="136" h="224"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="teen_idle.png">
+	<SubTexture name="idle0000" x="0" y="0" w="126" h="192"/>
+	<SubTexture name="idle0001" x="126" y="0" w="126" h="192"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="teen_jump.png">
+	<Config loop="false" framerate="24">
+	<SubTexture name="jump0000" x="0" y="0" w="169" h="240"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="teen_jump.png">
+	<Config loop="false" framerate="16">
+	<SubTexture name="land0000" x="169" y="0" w="169" h="240"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="teen_run.png">
+	<SubTexture name="run0000" x="0" y="0" w="189" h="202"/>
+	<SubTexture name="run0001" x="189" y="0" w="189" h="202"/>
+	<SubTexture name="run0002" x="0" y="202" w="189" h="202"/>
+	<SubTexture name="run0003" x="189" y="202" w="189" h="202"/>
+</TextureAtlas>

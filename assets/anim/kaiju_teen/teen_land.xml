@@ -1,0 +1,4 @@
+<TextureAtlas imagePath="teen_jump.png">
+	<Config loop="false" framerate="16">
+	<SubTexture name="land0000" x="169" y="0" w="169" h="240"/>
+</TextureAtlas>

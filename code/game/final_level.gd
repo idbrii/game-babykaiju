@@ -67,6 +67,13 @@ func _init_level():
     if ui:
         ui.visible = false
 
+    kaiju.connect("on_catch_player", _on_kaiju_catch_player)
+
+func _on_kaiju_catch_player(_p: Node2D):
+    player.set_block_input(true)
+    fixed_speed_camera.stop_moving()
+    _kaiju_say("NOM NOM NOM!", 80)
+
 func _player_say(text: String):
     player_text.visible = true
     player_text.text = text

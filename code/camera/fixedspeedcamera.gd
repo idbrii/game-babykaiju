@@ -10,6 +10,9 @@ func _ready():
 func start_moving():
     moving = true
 
+func stop_moving():
+    moving = false
+
 func _process(delta):
     if moving:
         position = position + Vector2(speed * delta, 0)

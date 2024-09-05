@@ -14,7 +14,7 @@ config/name="Baby Kaiju"
 config/description="A 2D platformer where you carry around a cute baby kaiju and feed it until it
 grows into a rideable teen and then a full grown out of control monster."
 config/tags=PackedStringArray("2d", "created_by_me", "platformer")
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://levels/level_test.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://assets/hidef/static_pickups/berry.png"
 

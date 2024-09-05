@@ -1,0 +1,4 @@
+<TextureAtlas imagePath="roar.png">
+	<SubTexture name="roar0000" x="0" y="0" w="440" h="385"/>
+	<SubTexture name="roar0001" x="440" y="0" w="440" h="385"/>
+</TextureAtlas>

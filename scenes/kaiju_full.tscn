@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b61if1k4lxo73"]
 
 [ext_resource type="Script" path="res://code/game/kaiju_full.gd" id="1_26bmo"]
-[ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_dswqo"]
+[ext_resource type="SpriteFrames" uid="uid://csrl2prr46og7" path="res://assets/anim/kaiju_full/kaiju_full.xml" id="2_5fgqu"]
 [ext_resource type="Texture2D" uid="uid://dkvepke1q1i7w" path="res://assets/hidef/kaijus/kaiju-full.png" id="5_k147p"]
 
 [sub_resource type="RectangleShape2D" id="2"]
@@ -125,13 +125,14 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
-position = Vector2(0, -14)
-sprite_frames = ExtResource("3_dswqo")
-animation = &"jump"
-frame_progress = 0.904858
+position = Vector2(-26.5, -172)
+sprite_frames = ExtResource("2_5fgqu")
+animation = &"walk"
+frame_progress = 0.960201
 offset = Vector2(0, -12)
 
 [node name="placeholder" type="Sprite2D" parent="visual"]
+visible = false
 position = Vector2(1, -189)
 texture = ExtResource("5_k147p")
 

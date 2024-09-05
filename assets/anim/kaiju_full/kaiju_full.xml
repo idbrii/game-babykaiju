@@ -1,0 +1,122 @@
+
+<TextureAtlas imagePath="idle.png">
+	<SubTexture name="idle0000" x="0" y="0" w="433" h="371"/>
+	<SubTexture name="idle0001" x="433" y="0" w="433" h="371"/>
+	<SubTexture name="idle0002" x="866" y="0" w="433" h="371"/>
+	<SubTexture name="idle0003" x="1299" y="0" w="433" h="371"/>
+	<SubTexture name="idle0004" x="1732" y="0" w="433" h="371"/>
+	<SubTexture name="idle0005" x="2165" y="0" w="433" h="371"/>
+	<SubTexture name="idle0006" x="2598" y="0" w="433" h="371"/>
+	<SubTexture name="idle0007" x="3031" y="0" w="433" h="371"/>
+	<SubTexture name="idle0008" x="3464" y="0" w="433" h="371"/>
+	<SubTexture name="idle0009" x="0" y="371" w="433" h="371"/>
+	<SubTexture name="idle0010" x="433" y="371" w="433" h="371"/>
+	<SubTexture name="idle0011" x="866" y="371" w="433" h="371"/>
+	<SubTexture name="idle0012" x="1299" y="371" w="433" h="371"/>
+	<SubTexture name="idle0013" x="1732" y="371" w="433" h="371"/>
+	<SubTexture name="idle0014" x="2165" y="371" w="433" h="371"/>
+	<SubTexture name="idle0015" x="2598" y="371" w="433" h="371"/>
+	<SubTexture name="idle0016" x="3031" y="371" w="433" h="371"/>
+	<SubTexture name="idle0017" x="3464" y="371" w="433" h="371"/>
+	<SubTexture name="idle0018" x="0" y="742" w="433" h="371"/>
+	<SubTexture name="idle0019" x="433" y="742" w="433" h="371"/>
+	<SubTexture name="idle0020" x="866" y="742" w="433" h="371"/>
+	<SubTexture name="idle0021" x="1299" y="742" w="433" h="371"/>
+	<SubTexture name="idle0022" x="1732" y="742" w="433" h="371"/>
+	<SubTexture name="idle0023" x="2165" y="742" w="433" h="371"/>
+	<SubTexture name="idle0024" x="2598" y="742" w="433" h="371"/>
+	<SubTexture name="idle0025" x="3031" y="742" w="433" h="371"/>
+	<SubTexture name="idle0026" x="3464" y="742" w="433" h="371"/>
+	<SubTexture name="idle0027" x="0" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0028" x="433" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0029" x="866" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0030" x="1299" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0031" x="1732" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0032" x="2165" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0033" x="2598" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0034" x="3031" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0035" x="3464" y="1113" w="433" h="371"/>
+	<SubTexture name="idle0036" x="0" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0037" x="433" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0038" x="866" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0039" x="1299" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0040" x="1732" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0041" x="2165" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0042" x="2598" y="1484" w="433" h="371"/>
+	<SubTexture name="idle0043" x="3031" y="1484" w="433" h="371"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="roar.png">
+	<SubTexture name="roar0000" x="0" y="0" w="440" h="385"/>
+	<SubTexture name="roar0001" x="440" y="0" w="440" h="385"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="run.png">
+	<SubTexture name="run0000" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0001" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0002" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0003" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0004" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0005" x="0" y="0" w="432" h="388"/>
+	<SubTexture name="run0006" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0007" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0008" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0009" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0010" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0011" x="432" y="0" w="432" h="388"/>
+	<SubTexture name="run0012" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0013" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0014" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0015" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0016" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0017" x="0" y="388" w="432" h="388"/>
+	<SubTexture name="run0018" x="432" y="388" w="432" h="388"/>
+	<SubTexture name="run0019" x="432" y="388" w="432" h="388"/>
+	<SubTexture name="run0020" x="432" y="388" w="432" h="388"/>
+	<SubTexture name="run0021" x="432" y="388" w="432" h="388"/>
+	<SubTexture name="run0022" x="432" y="388" w="432" h="388"/>
+	<SubTexture name="run0023" x="432" y="388" w="432" h="388"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="walk.png">
+	<SubTexture name="walk0000" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0001" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0002" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0003" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0004" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0005" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0006" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0007" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0008" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0009" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0010" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0011" x="0" y="0" w="440" h="379"/>
+	<SubTexture name="walk0012" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0013" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0014" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0015" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0016" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0017" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0018" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0019" x="440" y="0" w="440" h="379"/>
+	<SubTexture name="walk0020" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0021" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0022" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0023" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0024" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0025" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0026" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0027" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0028" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0029" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0030" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0031" x="0" y="379" w="440" h="379"/>
+	<SubTexture name="walk0032" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0033" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0034" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0035" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0036" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0037" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0038" x="440" y="379" w="440" h="379"/>
+	<SubTexture name="walk0039" x="440" y="379" w="440" h="379"/>
+</TextureAtlas>

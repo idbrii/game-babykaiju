@@ -42,6 +42,10 @@ var _block_input := false
 @export_group("Push")
 @export_range(100, 100000) var push_strength: float = 10000.0
 
+@export_group("Grabbing")
+@export var has_feature_grab := true
+
+
 var _input : Baton
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
@@ -141,28 +145,36 @@ func _physics_process(dt: float) -> void:
     sm.tick(dt)
     _tick_timers(dt)
 
-    var is_reaching = input.hold_grab
-    _grab_arms.visible = is_reaching
-
     var collided := move_and_slide()
-    if collided:
-        if is_reaching and not _held_object:
-            for i in get_slide_collision_count():
-                var col = get_slide_collision(i)
-                var body = col.get_collider()
-                if body.is_in_group("pushable"):
-                    grab_object(body)
-                    break
-        else:
-            for i in get_slide_collision_count():
-                var col = get_slide_collision(i)
-                var body = col.get_collider()
-                if body.is_in_group("pushable"):
-                    var push_force = col.get_normal() * -push_strength
-                    col.get_collider().apply_force(push_force)
 
-    if _held_object and not is_reaching:
-        drop_held_object()
+    if has_feature_grab:
+        var is_reaching = input.hold_grab
+        _grab_arms.visible = is_reaching
+
+        if collided:
+            if is_reaching and not _held_object:
+                for i in get_slide_collision_count():
+                    var col = get_slide_collision(i)
+                    var body = col.get_collider()
+                    if body.is_in_group("pushable"):
+                        grab_object(body)
+                        break
+            else:
+                apply_push_to_collisions()
+
+        if _held_object and not is_reaching:
+            drop_held_object()
+    else:
+        if collided:
+            apply_push_to_collisions()
+
+func apply_push_to_collisions():
+    for i in get_slide_collision_count():
+        var col = get_slide_collision(i)
+        var body = col.get_collider()
+        if body.is_in_group("pushable"):
+            var push_force = col.get_normal() * -push_strength
+            col.get_collider().apply_force(push_force)
 
 
 # State Machine {{{1

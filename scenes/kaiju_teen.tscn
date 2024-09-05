@@ -70,6 +70,7 @@ floor_snap_length = 16.0
 script = ExtResource("1_lraxt")
 max_run_speed = 700.0
 jump_force = 1500.0
+has_feature_grab = false
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -61.5)

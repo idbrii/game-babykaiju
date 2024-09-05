@@ -7,31 +7,31 @@
 </TextureAtlas>
 
 <TextureAtlas imagePath="jump.png">
-	<SubTexture name="fall0000" x="42" y="0" w="42" h="63"/>
+	<SubTexture name="fall0000" x="45" y="0" w="45" h="65"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="idle.png">
-	<SubTexture name="idle0000" x="0" y="0" w="39" h="63"/>
-	<SubTexture name="idle0001" x="0" y="63" w="39" h="63"/>
+	<SubTexture name="idle0000" x="0" y="0" w="38" h="63"/>
+	<SubTexture name="idle0001" x="38" y="0" w="38" h="63"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="jump.png">
 	<Config loop="false" framerate="24">
-	<SubTexture name="jump0000" x="0" y="0" w="42" h="63"/>
-	<SubTexture name="jump0001" x="42" y="0" w="42" h="63"/>
+	<SubTexture name="jump0000" x="0" y="0" w="45" h="65"/>
+	<SubTexture name="jump0001" x="45" y="0" w="45" h="65"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="jump.png">
 	<Config loop="false" framerate="16">
-	<SubTexture name="land0001" x="42" y="0" w="42" h="63"/>
-	<SubTexture name="land0002" x="84" y="0" w="42" h="63"/>
+	<SubTexture name="land0001" x="45" y="0" w="45" h="65"/>
+	<SubTexture name="land0002" x="90" y="0" w="45" h="65"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="run.png">
-	<SubTexture name="run0000" x="0" y="0" w="47" h="61"/>
-	<SubTexture name="run0001" x="47" y="0" w="47" h="61"/>
-	<SubTexture name="run0002" x="0" y="61" w="47" h="61"/>
-	<SubTexture name="run0003" x="47" y="61" w="47" h="61"/>
+	<SubTexture name="run0000" x="0" y="0" w="47" h="62"/>
+	<SubTexture name="run0001" x="47" y="0" w="47" h="62"/>
+	<SubTexture name="run0002" x="0" y="62" w="47" h="62"/>
+	<SubTexture name="run0003" x="47" y="62" w="47" h="62"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="runarm.png">

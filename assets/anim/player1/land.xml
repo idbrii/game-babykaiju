@@ -1,5 +1,5 @@
 <TextureAtlas imagePath="jump.png">
 	<Config loop="false" framerate="16">
-	<SubTexture name="land0001" x="42" y="0" w="42" h="63"/>
-	<SubTexture name="land0002" x="84" y="0" w="42" h="63"/>
+	<SubTexture name="land0001" x="45" y="0" w="45" h="65"/>
+	<SubTexture name="land0002" x="90" y="0" w="45" h="65"/>
 </TextureAtlas>

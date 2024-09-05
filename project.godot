@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/godot_sparrow/plugin.cfg", "res://addons
 pushable="Objects that can be pushed by the player."
 Spawnpoint=""
 Kaiju="The Kaiju"
+Fade=""
 
 [importer_defaults]
 

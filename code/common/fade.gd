@@ -12,16 +12,16 @@ func _ready():
     visible = true
     _set_fade_alpha(1.0)
     fade_in()
-    print("FADE ENABLED: %s", is_fading)
+    printt("FADE ENABLED:", is_fading)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    print("FADE ENABLED: %s", is_fading)
+    printt("FADE ENABLED:", is_fading)
     if is_fading:
         fade_progress = fade_progress + delta / fade_time
 
-        print("FADE PROGRESS: %1.2f", fade_progress)
+        printt("FADE PROGRESS:", fade_progress)
 
         if fade_progress >= 1.0:
             fade_progress = 1.0

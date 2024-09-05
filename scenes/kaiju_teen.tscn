@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=3 uid="uid://pbf3l3hfrtbo"]
+
+[ext_resource type="Script" path="res://code/platformer/player.gd" id="1_lraxt"]
+[ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_a3s2x"]
+[ext_resource type="Texture2D" uid="uid://dic7f6sbnqrru" path="res://assets/hidef/kaijus/kaiju-teen.png" id="2_rphmg"]
+[ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_ll3mm"]
+[ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="4_lc417"]
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(94, 123)
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Jump"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1.68179, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Land"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.241484, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.4, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
+_data = {
+"Jump": SubResource("3"),
+"Land": SubResource("4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhh14"]
+atlas = ExtResource("4_lc417")
+region = Rect2(704, 384, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68iv1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhh14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="KaijuTeen" type="CharacterBody2D" groups=["Climber", "Player"]]
+z_index = 10
+collision_mask = 14
+floor_snap_length = 16.0
+script = ExtResource("1_lraxt")
+max_run_speed = 700.0
+jump_force = 1500.0
+
+[node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -61.5)
+shape = SubResource("2")
+
+[node name="visual" type="Node2D" parent="."]
+position = Vector2(0, -6)
+script = ExtResource("2_a3s2x")
+player_path = NodePath("..")
+
+[node name="Polygon2D" type="Polygon2D" parent="visual"]
+visible = false
+position = Vector2(0, -8)
+color = Color(0.964706, 0.952941, 0.298039, 1)
+polygon = PackedVector2Array(-19, -18, -16.2806, 12.8197, -12.3612, 16, 13.3018, 16, 16, 12.6567, 16, -7.71495, 6, -16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="visual"]
+libraries = {
+"": SubResource("AnimationLibrary_1lb64")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
+visible = false
+position = Vector2(0, -14)
+sprite_frames = ExtResource("3_ll3mm")
+animation = &"jump"
+frame_progress = 0.904858
+offset = Vector2(0, -12)
+
+[node name="arm_root" type="Node2D" parent="visual/AnimatedSprite2D"]
+unique_name_in_owner = true
+scale = Vector2(1e-05, 1)
+
+[node name="grab_arms" type="AnimatedSprite2D" parent="visual/AnimatedSprite2D/arm_root"]
+position = Vector2(32, -4)
+rotation = 1.56525
+sprite_frames = SubResource("SpriteFrames_68iv1")
+
+[node name="hold_marker" type="Marker2D" parent="visual/AnimatedSprite2D/arm_root"]
+position = Vector2(1.75e+06, -6.5)
+
+[node name="placeholder" type="Sprite2D" parent="visual"]
+position = Vector2(-7, -77)
+texture = ExtResource("2_rphmg")
+
+[node name="ui_root" type="Node2D" parent="."]
+visible = false
+
+[node name="label_bookmark" type="Control" parent="ui_root"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -50.0
+offset_top = -69.0
+offset_right = -50.0
+offset_bottom = -69.0

@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="runarm.png">
+	<SubTexture name="runarm0000" x="0" y="0" w="28" h="21"/>
+	<SubTexture name="runarm0001" x="28" y="0" w="28" h="21"/>
+	<SubTexture name="runarm0002" x="0" y="21" w="28" h="21"/>
+	<SubTexture name="runarm0003" x="28" y="21" w="28" h="21"/>
+</TextureAtlas>

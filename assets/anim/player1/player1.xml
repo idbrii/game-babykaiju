@@ -1,0 +1,20 @@
+
+<TextureAtlas imagePath="idle.png">
+	<SubTexture name="idle0000" x="0" y="0" w="39" h="63"/>
+	<SubTexture name="idle0001" x="0" y="63" w="39" h="63"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="run.png">
+	<SubTexture name="run0000" x="0" y="0" w="47" h="61"/>
+	<SubTexture name="run0001" x="47" y="0" w="47" h="61"/>
+	<SubTexture name="run0002" x="0" y="61" w="47" h="61"/>
+	<SubTexture name="run0003" x="47" y="61" w="47" h="61"/>
+	<SubTexture name="run0004" x="0" y="122" w="47" h="61"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="runarm.png">
+	<SubTexture name="runarm0000" x="0" y="0" w="28" h="21"/>
+	<SubTexture name="runarm0001" x="28" y="0" w="28" h="21"/>
+	<SubTexture name="runarm0002" x="0" y="21" w="28" h="21"/>
+	<SubTexture name="runarm0003" x="28" y="21" w="28" h="21"/>
+</TextureAtlas>

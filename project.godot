@@ -59,6 +59,10 @@ texture={
 "roughness/mode": 0,
 "roughness/src_normal": ""
 }
+com.what-is-a-git.godot-sparrow-importer={
+"animation_framerate": 5,
+"animations_looped": true
+}
 
 [input]
 

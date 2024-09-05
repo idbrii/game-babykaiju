@@ -13,4 +13,3 @@ func _on_body_entered(eater):
         await get_tree().process_frame
         # Don't allow another eater
         monitoring = false
-

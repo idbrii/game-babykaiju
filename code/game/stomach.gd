@@ -14,5 +14,3 @@ func eat(food : Edible):
     anim.play("eat")
     await anim.animation_finished
     anim.play("idle")
-
-

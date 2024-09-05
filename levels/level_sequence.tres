@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelSceneSequence" load_steps=3 format=3 uid="uid://d1d3cj31jfyjt"]
+
+[ext_resource type="PackedScene" path="res://levels/gym_movement.tscn" id="1_pl7qc"]
+[ext_resource type="Script" path="res://code/common/levelscenesequence.gd" id="2_h8uhh"]
+
+[resource]
+script = ExtResource("2_h8uhh")
+levels = [ExtResource("1_pl7qc")]

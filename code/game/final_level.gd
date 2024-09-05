@@ -94,6 +94,14 @@ func _on_kaiju_catch_player(_p: Node2D):
 
     await _wait(3)
 
+    _kaiju_say("", 80)
+
+    var fade = get_tree().get_first_node_in_group("Fade")
+    fade.set_fade_time(2)
+    fade.fade_out()
+
+    await _wait(3)
+
     game_over_panel.visible = true
     game_over_retry_button.connect("pressed", _on_retry_pressed)
     game_over_quit_button.connect("pressed", _on_quit_pressed)

@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/godot_sparrow/plugin.cfg", "res://addons
 [global_group]
 
 pushable="Objects that can be pushed by the player."
+Spawnpoint=""
 
 [importer_defaults]
 

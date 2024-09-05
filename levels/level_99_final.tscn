@@ -25,3 +25,6 @@ position = Vector2(960, 540)
 script = ExtResource("2_tkfdi")
 area = NodePath("../Area2D")
 speed = 150.0
+
+[node name="Spawnpoint" type="Marker2D" parent="." index="4" groups=["Spawnpoint"]]
+position = Vector2(312, 989)

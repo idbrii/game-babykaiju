@@ -55,7 +55,7 @@ func _get_option_visibility(path: String, option_name: StringName, options: Dict
 	return true
 
 
-func _import(source_file: String, save_path: String, options: Dictionary, 
+func _import(source_file: String, save_path: String, options: Dictionary,
 		platform_variants: Array[String], gen_files: Array[String]) -> Error:
 	# This is done, because, the get_image function is fucking stupid sometimes.
 	# Thanks! :3
@@ -63,44 +63,44 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 
 	if not FileAccess.file_exists(source_file):
 		return ERR_FILE_NOT_FOUND
-	
+
 	var xml: XMLParser = XMLParser.new()
 	xml.open(source_file)
-	
+
 	var sprite_frames: SpriteFrames = SpriteFrames.new()
 	sprite_frames.remove_animation('default')
-	
+
 	var texture = null
 	var image: Image
 	var image_texture: ImageTexture
-	
+
 	# This is done to prevent reuse of atlas textures.
 	# The actual difference this makes may be unnoticable but it is still done.
 	var sparrow_frames: Array = []
-	
+
 	while xml.read() == OK:
 		if xml.get_node_type() != XMLParser.NODE_ELEMENT:
 			continue
-		
+
 		var node_name: String = xml.get_node_name().to_lower()
-		
+
 		if node_name == 'textureatlas':
 			var image_name: StringName = xml.get_named_attribute_value_safe('imagePath')
 			var image_path: String = '%s/%s' % [source_file.get_base_dir(), image_name]
-			
+
 			if not FileAccess.file_exists(image_path):
 				return ERR_FILE_NOT_FOUND
-			
+
 			texture = ResourceLoader.load(image_path, 'CompressedTexture2D', ResourceLoader.CACHE_MODE_IGNORE)
-			
+
 			image = texture.get_image()
 			image.decompress()
 			image_texture = ImageTexture.create_from_image(image)
 			continue
-		
+
 		if node_name != 'subtexture':
 			continue
-		
+
 		# Couldn't find texture from imagePath in TextureAtlas.
 		if texture == null:
 			return ERR_FILE_MISSING_DEPENDENCIES
@@ -124,7 +124,7 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 		frame.has_offsets = xml.has_attribute('frameX') and options.get('use_offsets', true)
 
 		var frame_data: Array = _get_frame_name_and_number(frame)
-		
+
 		for sparrow_frame in sparrow_frames:
 			if sparrow_frame.source == frame.source and \
 					sparrow_frame.offsets == frame.offsets:
@@ -134,36 +134,36 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 		# Unique new frame! Awesome.
 		if frame.atlas == null:
 			frame.atlas = AtlasTexture.new()
-			
+
 			var rotated: bool = xml.get_named_attribute_value_safe('rotated') == 'true'
-			
+
 			# Just used to not have to reference frame 24/7.
 			var atlas: AtlasTexture = frame.atlas
 			atlas.atlas = image_texture
 			atlas.filter_clip = true
 			atlas.region = frame.source
-			
+
 			var margin: Rect2i = Rect2i(-1, -1, -1, -1)
-			
+
 			if frame.has_offsets:
 				if frame.offsets.size == Vector2i.ZERO:
 					frame.offsets.size = frame.source.size
-				
+
 				# Once again just not referencing frame constantly.
 				var source: Rect2i = frame.source
 				var offsets: Rect2i = frame.offsets
-				
+
 				margin = Rect2i(
 					-offsets.position.x, -offsets.position.y,
 					offsets.size.x - source.size.x, offsets.size.y - source.size.y)
-				
+
 				margin.size = margin.size.clamp(margin.position.abs(), Vector2i.MAX)
 				atlas.margin = margin
-			
+
 			if rotated:
 				var atlas_image: Image = atlas.get_image()
 				atlas_image.rotate_90(COUNTERCLOCKWISE)
-				
+
 				var atlas_texture: ImageTexture = ImageTexture.create_from_image(atlas_image)
 
 				if margin != Rect2i(-1, -1, -1, -1):
@@ -181,21 +181,21 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 					margin = Rect2i(
 						-offsets.position.x, -offsets.position.y,
 						offsets.size.x - source.size.x, offsets.size.y - source.size.y)
-					
+
 					atlas.margin = margin
 					frame.atlas = atlas
 				else:
 					frame.atlas = atlas_texture
-		
+
 		frame.animation = frame_data[1]
-		
+
 		if not sprite_frames.has_animation(frame.animation):
 			sprite_frames.add_animation(frame.animation)
 			sprite_frames.set_animation_loop(frame.animation, options.get('animations_looped', false))
 			sprite_frames.set_animation_speed(frame.animation, options.get('animation_framerate', 24))
-		
+
 		sparrow_frames.push_back(frame)
-	
+
 	sparrow_frames.sort_custom(_sort_frames)
 
 	for frame in sparrow_frames:
@@ -213,12 +213,12 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 func _get_frame_name_and_number(frame) -> Array:
 	var frame_number: StringName = frame.name.right(4)
 	var animation_name: StringName = frame.name.left(frame.name.length() - 4)
-	
+
 	# By default we support animations with name0000, name0001, etc.
 	# We should still allow other sprites to be exported properly however.
 	if not frame_number.is_valid_int():
 		animation_name = frame.name
-	
+
 	return [frame_number.to_int() if frame_number.is_valid_int() else -1, animation_name]
 
 

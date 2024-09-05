@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://sixdkusjjf8l"]
+[gd_scene load_steps=5 format=3 uid="uid://sixdkusjjf8l"]
 
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="1_h4by4"]
 [ext_resource type="PackedScene" uid="uid://dmjtpxsbpkrsr" path="res://code/common/global_input.tscn" id="3_f4ube"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://code/camera/ScreenCamera.tscn" id="4_1px78"]
+[ext_resource type="Script" path="res://code/common/fade.gd" id="4_ffct1"]
 
 [node name="LevelRequirements" type="Node2D"]
 
@@ -11,10 +12,10 @@
 [node name="ScreenCamera" parent="." groups=["Camera"] instance=ExtResource("4_1px78")]
 position = Vector2(963, 541)
 
-[node name="WaitingForSpawn" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
 process_mode = 4
 
-[node name="Root" type="Control" parent="WaitingForSpawn"]
+[node name="Root" type="Control" parent="Canvas"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +26,7 @@ mouse_filter = 2
 theme = ExtResource("1_h4by4")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="WaitingForSpawn/Root"]
+[node name="WaitingForSpawn" type="Label" parent="Canvas/Root"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,3 +41,16 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press Start/Enter to play"
 metadata/_edit_use_anchors_ = true
+
+[node name="FadeRect" type="ColorRect" parent="Canvas"]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_ffct1")

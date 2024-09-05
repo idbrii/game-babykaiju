@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://code/platformer/Player.tscn" id="4_lpyfe"]
 [ext_resource type="TileSet" uid="uid://da1mj5hjtrv1q" path="res://assets/hidef/tilemap/tilemap_example.tres" id="5_05t2i"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://code/camera/ScreenCamera.tscn" id="6_s7x4h"]
-[ext_resource type="PackedScene" uid="uid://c5ogj7gf3f76" path="res://scenes/kaiju_baby.tscn" id="7_2mjom"]
+[ext_resource type="PackedScene" path="res://scenes/kaiju_baby.tscn" id="7_2mjom"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="7_x6sdq"]
 [ext_resource type="Script" path="res://code/common/global_input.gd" id="8_ej5k7"]
 

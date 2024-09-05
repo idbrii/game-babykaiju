@@ -21,6 +21,16 @@ Similar to feeding baby yoshi: https://youtu.be/t6B30vCAlcU?si=FJi6_j3HrXKpJxHA&
   feeding it at the right times.
 
 
+## Controls
+
+* `Alt-Enter`: Toggle fullscreen
+* `Escape`: Quit
+
+## Debug Keys
+
+* `Home`: Slow motion
+* `t`: Teleport
+
 ## Credits
 
 ### Libraries

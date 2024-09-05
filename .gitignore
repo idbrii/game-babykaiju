@@ -4,7 +4,8 @@
 # Godot-specific ignores
 .import/
 export.cfg
-export_presets.cfg
+# Allow export presets to easily use ci/pushbuild.py on different machines.
+# export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation

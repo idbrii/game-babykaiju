@@ -18,22 +18,31 @@ func _run():
     player.set_block_input(true)
 
     await _wait(1)
-    _kaiju_say("NOM NOM NOM")
+    _kaiju_say("NOM NOM NOM", 20)
 
     await _wait(2)
     player.set_direction(-1) ## Face left
     _player_say("Kaiju, what are you doing!?")
 
     await _wait(2)
-    _kaiju_say("NOM NOM NOM")
+    _kaiju_say("NOM NOM NOM", 45)
 
     await _wait(2)
     _player_say("You have to stop! Please, Kaiju!")
 
     await _wait(2)
-    _kaiju_say("RAAAAARRRR")
+    _kaiju_say("RAAAAARRRR", 60)
 
     await _wait(2)
+    _player_say("Kaiju, please! It's me!")
+
+    await _wait(2)
+    _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80)
+
+    await _wait(2)
+    _player_say("Oh no!")
+
+    await _wait(1)
     _player_say("")
     player.set_block_input(false)
     fixed_speed_camera.start_moving()
@@ -59,9 +68,10 @@ func _player_say(text: String):
     player_text.text = text
     kaiju_text.visible = false
 
-func _kaiju_say(text: String):
+func _kaiju_say(text: String, font_size: int):
     kaiju_text.visible = true
     kaiju_text.text = text
+    kaiju_text.add_theme_font_size_override("font_size", font_size)
     player_text.visible = false
 
 func _wait(seconds: float):

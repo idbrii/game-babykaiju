@@ -11,10 +11,12 @@ config_version=5
 [application]
 
 config/name="Baby Kaiju"
+config/description="A 2D platformer where you carry around a cute baby kaiju and feed it until it
+grows into a rideable teen and then a full grown out of control monster."
 config/tags=PackedStringArray("2d", "created_by_me", "platformer")
 run/main_scene="res://levels/level_master.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://assets/basic/Circle.png"
+config/icon="res://assets/hidef/static_pickups/berry.png"
 
 [autoload]
 

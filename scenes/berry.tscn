@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://doefmbuaro0q5"]
+
+[ext_resource type="Script" path="res://code/game/edible.gd" id="1_6aee4"]
+[ext_resource type="SpriteFrames" uid="uid://c116gu61mlbt8" path="res://assets/hidef/static_pickups/berry.xml" id="1_gfdy7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onw1p"]
+radius = 23.0217
+
+[node name="Berry" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_6aee4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_onw1p")
+
+[node name="visual" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
+sprite_frames = ExtResource("1_gfdy7")
+animation = &"berry"
+autoplay = "berry"

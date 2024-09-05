@@ -1,0 +1,4 @@
+<TextureAtlas imagePath="baby_idle.png">
+	<SubTexture name="idle0000" x="0" y="0" w="57" h="64"/>
+	<SubTexture name="idle0001" x="0" y="64" w="57" h="64"/>
+</TextureAtlas>

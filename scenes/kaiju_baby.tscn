@@ -1,25 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5ogj7gf3f76"]
+[gd_scene load_steps=5 format=3 uid="uid://c5ogj7gf3f76"]
 
-[ext_resource type="Texture2D" uid="uid://8lyetl5k6apx" path="res://assets/hidef/kaijus/kaiju-baby.png" id="1_7vbg1"]
 [ext_resource type="Script" path="res://code/platformer/grabbable.gd" id="1_v183x"]
+[ext_resource type="SpriteFrames" uid="uid://dj4tw33i2irhi" path="res://assets/anim/kaiju_baby/kaiju_baby.xml" id="2_r17th"]
+[ext_resource type="Script" path="res://code/game/kaiju.gd" id="2_txa02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yp6dw"]
-size = Vector2(63.5, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k3ge0"]
-atlas = ExtResource("1_7vbg1")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ydio1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k3ge0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+size = Vector2(58, 65)
 
 [node name="KaijuBaby" type="RigidBody2D" groups=["pushable"]]
 collision_layer = 4
@@ -31,11 +17,14 @@ drop_impulse = null
 drop_uplift = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.25, -30)
+position = Vector2(-1, -32.5)
 shape = SubResource("RectangleShape2D_yp6dw")
 
 [node name="visual" type="Node2D" parent="."]
+script = ExtResource("2_txa02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
+unique_name_in_owner = true
 position = Vector2(-1, -32)
-sprite_frames = SubResource("SpriteFrames_ydio1")
+sprite_frames = ExtResource("2_r17th")
+animation = &"idle"

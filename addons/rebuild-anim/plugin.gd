@@ -22,14 +22,22 @@ func _on_btn_pressed():
     if dir:
         dir.list_dir_begin()
         var file_name = dir.get_next()
+        var exported = []
         while file_name != "":
             if dir.current_is_dir():
                 var anim_path = path.path_join(file_name)
                 print("\t", "Found directory: ", file_name, " Full path: ", anim_path)
-                build_anims(anim_path, file_name)
+                var f = build_anims(anim_path, file_name)
+                exported.append(f)
             else:
                 print("\t", "Found file: ", file_name, " ignoring")
             file_name = dir.get_next()
+
+
+        var fs := EditorInterface.get_resource_filesystem()
+        fs.scan()
+        await get_tree().create_timer(0.25).timeout
+        fs.reimport_files(exported)
     else:
         print("\t", "An error occurred when trying to access the path.")
 
@@ -60,6 +68,4 @@ func build_anims(path, anim):
     file.store_string(content)
     printt("\t", "Wrote combined anims for {anim} to: {output_path}".format({anim=anim, output_path=output_path}))
 
-    var fs := EditorInterface.get_resource_filesystem()
-    fs.scan()
-    fs.reimport_files([output_path])
+    return output_path

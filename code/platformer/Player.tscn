@@ -6,7 +6,7 @@
 [ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_2rwxb"]
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(69, 71.5)
+size = Vector2(46, 63)
 
 [sub_resource type="Animation" id="3"]
 resource_name = "Jump"
@@ -71,7 +71,7 @@ max_run_speed = 700.0
 jump_force = 1500.0
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -35.75)
+position = Vector2(-1, -31.5)
 shape = SubResource("2")
 
 [node name="visual" type="Node2D" parent="."]
@@ -93,8 +93,8 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
 position = Vector2(0, -14)
 sprite_frames = ExtResource("3_2rwxb")
-animation = &"dash"
-frame_progress = 0.0408964
+animation = &"jump"
+frame_progress = 0.904858
 offset = Vector2(0, -12)
 
 [node name="arm_root" type="Node2D" parent="visual/AnimatedSprite2D"]

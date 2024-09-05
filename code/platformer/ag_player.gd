@@ -86,7 +86,7 @@ var states := {
     },
     land = {
         enter = _enter_state_land,
-        update = always_true1,
+        update = _update_state_land,
         exit = always_true1,
     },
     dash = {
@@ -163,15 +163,23 @@ func _enter_state_climb(_data):
 
 func _enter_state_jump(_data):
     _play_anim("jump")
-    _play_fx("Jump")
+    # Don't squash because we have animation.
+    #~ _play_fx("Jump")
 
 func _enter_state_fall(_data):
     _play_anim("fall")
 
+
 func _enter_state_land(_data):
-    _play_fx("Land")
     _play_anim("land")
-    sm.transition_to(states.ground_idle, {})
+    # Don't squash because we have animation.
+    #~ _play_fx("Land")
+
+func _update_state_land(dt):
+    if not _sprite_animator.is_playing():
+        return sm.transition_to(states.ground_idle, {})
+    return _update_state_generic(dt)
+
 
 func _enter_state_dash(_data):
     _play_anim("dash")

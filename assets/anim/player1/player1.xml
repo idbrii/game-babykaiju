@@ -6,8 +6,8 @@
 	<SubTexture name="dash0003" x="47" y="61" w="47" h="61"/>
 </TextureAtlas>
 
-<TextureAtlas imagePath="idle.png">
-	<SubTexture name="fall0000" x="0" y="0" w="39" h="63"/>
+<TextureAtlas imagePath="jump.png">
+	<SubTexture name="fall0000" x="42" y="0" w="42" h="63"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="idle.png">
@@ -22,7 +22,7 @@
 </TextureAtlas>
 
 <TextureAtlas imagePath="jump.png">
-	<Config loop="false">
+	<Config loop="false" framerate="16">
 	<SubTexture name="land0001" x="42" y="0" w="42" h="63"/>
 	<SubTexture name="land0002" x="84" y="0" w="42" h="63"/>
 </TextureAtlas>

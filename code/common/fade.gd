@@ -17,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-    printt("FADE ENABLED:", is_fading)
+    #~ printt("FADE ENABLED:", is_fading)
     if is_fading:
         fade_progress = fade_progress + delta / fade_time
 

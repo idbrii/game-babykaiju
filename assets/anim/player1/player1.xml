@@ -15,11 +15,16 @@
 	<SubTexture name="idle0001" x="0" y="63" w="39" h="63"/>
 </TextureAtlas>
 
-<TextureAtlas imagePath="run.png">
-	<SubTexture name="jump0000" x="0" y="0" w="47" h="61"/>
-	<SubTexture name="jump0001" x="47" y="0" w="47" h="61"/>
-	<SubTexture name="jump0002" x="0" y="61" w="47" h="61"/>
-	<SubTexture name="jump0003" x="47" y="61" w="47" h="61"/>
+<TextureAtlas imagePath="jump.png">
+	<Config loop="false">
+	<SubTexture name="jump0000" x="0" y="0" w="42" h="63"/>
+	<SubTexture name="jump0001" x="42" y="0" w="42" h="63"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="jump.png">
+	<Config loop="false">
+	<SubTexture name="land0001" x="42" y="0" w="42" h="63"/>
+	<SubTexture name="land0002" x="84" y="0" w="42" h="63"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="run.png">

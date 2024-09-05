@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="jumparm.png">
+	<SubTexture name="jumparm0000" x="0" y="0" w="29" h="32"/>
+	<SubTexture name="jumparm0001" x="29" y="0" w="29" h="32"/>
+	<SubTexture name="jumparm0002" x="0" y="32" w="29" h="32"/>
+	<SubTexture name="jumparm0003" x="29" y="32" w="29" h="32"/>
+</TextureAtlas>

@@ -170,6 +170,7 @@ func _enter_state_fall(_data):
 
 func _enter_state_land(_data):
     _play_fx("Land")
+    _play_anim("land")
     sm.transition_to(states.ground_idle, {})
 
 func _enter_state_dash(_data):

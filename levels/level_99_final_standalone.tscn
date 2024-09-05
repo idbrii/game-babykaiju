@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ds8ahqmwe5tdr"]
+[gd_scene load_steps=9 format=4 uid="uid://ds8ahqmwe5tdr"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_ue45u"]
 [ext_resource type="Script" path="res://code/camera/fixedspeedcamera.gd" id="2_icg6v"]
@@ -8,17 +8,23 @@
 [ext_resource type="Script" path="res://code/game/final_level.gd" id="5_mhmp7"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="6_i4n1b"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qll5u"]
+size = Vector2(200, 1200)
+
 [node name="Level" instance=ExtResource("1_ue45u")]
 
-[node name="FinalLevel" type="Node2D" parent="." index="0" node_paths=PackedStringArray("player_text", "kaiju_text", "fixed_speed_camera", "kaiju", "game_over_panel", "retry_button", "quit_button")]
+[node name="FinalLevel" type="Node2D" parent="." index="0" node_paths=PackedStringArray("player_text", "kaiju_text", "fixed_speed_camera", "kaiju", "end_area", "game_over_panel", "game_over_retry_button", "game_over_quit_button", "victory_panel", "victory_quit_button")]
 script = ExtResource("5_mhmp7")
 player_text = NodePath("../Canvas/Root/PlayerText")
 kaiju_text = NodePath("../Canvas/Root/KaijuText")
 fixed_speed_camera = NodePath("../FixedSpeedCamera")
 kaiju = NodePath("../KaijuFull")
+end_area = NodePath("../EndArea")
 game_over_panel = NodePath("../Canvas/Root/GameOverPanel")
-retry_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/RetryButton")
-quit_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/QuitButton")
+game_over_retry_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/RetryButton")
+game_over_quit_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/QuitButton")
+victory_panel = NodePath("../Canvas/Root/VictoryPanel")
+victory_quit_button = NodePath("../Canvas/Root/VictoryPanel/VBoxContainer/QuitButton")
 quit_scene = ExtResource("3_nc52y")
 
 [node name="LevelRequirements" parent="." index="1" instance=ExtResource("3_iqpqw")]
@@ -43,7 +49,13 @@ speed = 200.0
 [node name="Spawnpoint" type="Marker2D" parent="." index="6" groups=["Spawnpoint"]]
 position = Vector2(690, 872)
 
-[node name="Canvas" type="CanvasLayer" parent="." index="7"]
+[node name="EndArea" type="Area2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea" index="0"]
+position = Vector2(2940, 539)
+shape = SubResource("RectangleShape2D_qll5u")
+
+[node name="Canvas" type="CanvasLayer" parent="." index="8"]
 process_mode = 4
 
 [node name="Root" type="Control" parent="Canvas" index="0"]
@@ -91,7 +103,40 @@ grow_vertical = 2
 text = "Kaiju Text"
 metadata/_edit_use_anchors_ = true
 
-[node name="GameOverPanel" type="PanelContainer" parent="Canvas/Root" index="2"]
+[node name="VictoryPanel" type="PanelContainer" parent="Canvas/Root" index="2"]
+process_mode = 3
+visible = false
+z_index = 100
+layout_mode = 2
+offset_left = 560.0
+offset_top = 415.0
+offset_right = 1360.0
+offset_bottom = 665.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Root/VictoryPanel" index="0"]
+custom_minimum_size = Vector2(800, 250)
+layout_mode = 2
+alignment = 1
+
+[node name="GameOverText" type="Label" parent="Canvas/Root/VictoryPanel/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Thanks for playing!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Spacing" type="Control" parent="Canvas/Root/VictoryPanel/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Canvas/Root/VictoryPanel/VBoxContainer" index="2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Return to Main Menu"
+
+[node name="GameOverPanel" type="PanelContainer" parent="Canvas/Root" index="3"]
 process_mode = 3
 visible = false
 z_index = 100
@@ -109,7 +154,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Canvas/Root/GameOverPanel" index="0"]
-custom_minimum_size = Vector2(600, 200)
+custom_minimum_size = Vector2(600, 250)
 layout_mode = 2
 alignment = 1
 

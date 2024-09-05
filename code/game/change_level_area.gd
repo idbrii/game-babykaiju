@@ -14,10 +14,10 @@ func _player_entered(body: Node2D):
     if not body.is_in_group("Player"):
         return
 
-    _transition_to_level()
+    _transition_to_level(body)
 
 
-func _transition_to_level():
+func _transition_to_level(player: Node2D):
     if changing_level:
         return
 
@@ -26,6 +26,10 @@ func _transition_to_level():
     fade.set_fade_time(fade_time)
     fade.fade_out()
     fade.connect("fade_completed", _change_level)
+
+
+    await get_tree().create_timer(0.2).timeout
+    player.set_block_input(true)
 
 func _change_level():
     get_tree().change_scene_to_packed(level)

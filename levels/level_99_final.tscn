@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_g4s16"]
 [ext_resource type="Script" path="res://code/game/change_level_area.gd" id="2_ooip6"]
-[ext_resource type="PackedScene" uid="uid://ds8ahqmwe5tdr" path="res://levels/level_99_final_standalone.tscn" id="3_30s3l"]
+[ext_resource type="PackedScene" uid="uid://ds8ahqmwe5tdr" path="res://levels/level_99_final_standalone.tscn" id="3_bptaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3flb"]
-size = Vector2(677, 1077)
+size = Vector2(179, 1077)
 
 [node name="Level" instance=ExtResource("1_g4s16")]
 
@@ -17,9 +17,9 @@ tile_map_data = PackedByteArray("AAAAABAAAgAGAAMAAAABABAAAgACAAMAAAACABAAAgACAAM
 
 [node name="ChangeLevelArea" type="Area2D" parent="." index="2"]
 script = ExtResource("2_ooip6")
-level = ExtResource("3_30s3l")
+level = ExtResource("3_bptaa")
 fade_time = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeLevelArea" index="0"]
-position = Vector2(341.5, 540.5)
+position = Vector2(611.5, 540.5)
 shape = SubResource("RectangleShape2D_x3flb")

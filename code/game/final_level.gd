@@ -6,6 +6,11 @@ var player
 @export var fixed_speed_camera: Node2D
 @export var kaiju: Node2D
 
+@export var game_over_panel: Control
+@export var retry_button: Button
+@export var quit_button: Button
+@export var quit_scene: PackedScene
+
 func _ready():
     _run()
 
@@ -73,6 +78,21 @@ func _on_kaiju_catch_player(_p: Node2D):
     player.set_block_input(true)
     fixed_speed_camera.stop_moving()
     _kaiju_say("NOM NOM NOM!", 80)
+
+    await _wait(3)
+
+    game_over_panel.visible = true
+    game_over_panel.mouse_filter = Control.MOUSE_FILTER_STOP
+    retry_button.mouse_filter = Control.MOUSE_FILTER_STOP
+    quit_button.mouse_filter = Control.MOUSE_FILTER_STOP
+    retry_button.connect("pressed", _on_retry_pressed)
+    quit_button.connect("pressed", _on_quit_pressed)
+
+func _on_retry_pressed():
+    get_tree().reload_current_scene()
+
+func _on_quit_pressed():
+    get_tree().change_scene_to_packed(quit_scene)
 
 func _player_say(text: String):
     player_text.visible = true

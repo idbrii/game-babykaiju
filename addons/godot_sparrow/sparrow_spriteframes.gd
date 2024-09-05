@@ -116,7 +116,6 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 			var fps = xml.get_named_attribute_value_safe('framerate')
 			if fps:
 				framerate = fps.to_int()
-				print(source_file, "framerate", framerate, fps)
 			continue
 
 

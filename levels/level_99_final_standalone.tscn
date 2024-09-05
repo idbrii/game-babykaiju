@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds8ahqmwe5tdr"]
+[gd_scene load_steps=8 format=4 uid="uid://ds8ahqmwe5tdr"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_ue45u"]
 [ext_resource type="Script" path="res://code/camera/fixedspeedcamera.gd" id="2_icg6v"]
 [ext_resource type="PackedScene" uid="uid://sixdkusjjf8l" path="res://levels/level_requirements.tscn" id="3_iqpqw"]
+[ext_resource type="PackedScene" uid="uid://r6mabbnqr8a0" path="res://scenes/main_menu.tscn" id="3_nc52y"]
 [ext_resource type="PackedScene" uid="uid://b61if1k4lxo73" path="res://scenes/kaiju_full.tscn" id="4_kltto"]
 [ext_resource type="Script" path="res://code/game/final_level.gd" id="5_mhmp7"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="6_i4n1b"]
@@ -18,6 +19,7 @@ kaiju = NodePath("../KaijuFull")
 game_over_panel = NodePath("../Canvas/Root/GameOverPanel")
 retry_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/RetryButton")
 quit_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/QuitButton")
+quit_scene = ExtResource("3_nc52y")
 
 [node name="LevelRequirements" parent="." index="1" instance=ExtResource("3_iqpqw")]
 

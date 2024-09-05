@@ -9,8 +9,9 @@
 [ext_resource type="Script" path="res://code/game/bouncer.gd" id="8_7p17h"]
 [ext_resource type="Script" path="res://code/game/stomach.gd" id="9_p5hj7"]
 
-[sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(94, 193)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiv0d"]
+radius = 42.0
+height = 193.0
 
 [sub_resource type="Animation" id="3"]
 resource_name = "Jump"
@@ -69,7 +70,7 @@ has_feature_grab = false
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, -96.5)
-shape = SubResource("2")
+shape = SubResource("CapsuleShape2D_eiv0d")
 
 [node name="visual" type="Node2D" parent="."]
 position = Vector2(0, -6)

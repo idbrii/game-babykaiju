@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="idle.png">
+	<SubTexture name="fall0000" x="0" y="0" w="39" h="63"/>
+</TextureAtlas>

@@ -13,6 +13,6 @@ dest_files=["res://.godot/imported/player1.xml-99336c96d0ecf3466ad861ad676b2c61.
 [params]
 
 use_offsets=true
-animation_framerate=24
-animations_looped=false
+animation_framerate=5
+animations_looped=true
 store_external_spriteframes=false

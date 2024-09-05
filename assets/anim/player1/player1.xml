@@ -1,7 +1,25 @@
 
+<TextureAtlas imagePath="run.png">
+	<SubTexture name="dash0000" x="0" y="0" w="47" h="61"/>
+	<SubTexture name="dash0001" x="47" y="0" w="47" h="61"/>
+	<SubTexture name="dash0002" x="0" y="61" w="47" h="61"/>
+	<SubTexture name="dash0003" x="47" y="61" w="47" h="61"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="idle.png">
+	<SubTexture name="fall0000" x="0" y="0" w="39" h="63"/>
+</TextureAtlas>
+
 <TextureAtlas imagePath="idle.png">
 	<SubTexture name="idle0000" x="0" y="0" w="39" h="63"/>
 	<SubTexture name="idle0001" x="0" y="63" w="39" h="63"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="run.png">
+	<SubTexture name="jump0000" x="0" y="0" w="47" h="61"/>
+	<SubTexture name="jump0001" x="47" y="0" w="47" h="61"/>
+	<SubTexture name="jump0002" x="0" y="61" w="47" h="61"/>
+	<SubTexture name="jump0003" x="47" y="61" w="47" h="61"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="run.png">
@@ -9,7 +27,6 @@
 	<SubTexture name="run0001" x="47" y="0" w="47" h="61"/>
 	<SubTexture name="run0002" x="0" y="61" w="47" h="61"/>
 	<SubTexture name="run0003" x="47" y="61" w="47" h="61"/>
-	<SubTexture name="run0004" x="0" y="122" w="47" h="61"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="runarm.png">

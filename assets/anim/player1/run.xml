@@ -3,5 +3,4 @@
 	<SubTexture name="run0001" x="47" y="0" w="47" h="61"/>
 	<SubTexture name="run0002" x="0" y="61" w="47" h="61"/>
 	<SubTexture name="run0003" x="47" y="61" w="47" h="61"/>
-	<SubTexture name="run0004" x="0" y="122" w="47" h="61"/>
 </TextureAtlas>

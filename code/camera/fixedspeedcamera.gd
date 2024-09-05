@@ -7,6 +7,8 @@ var moving = false
 func _ready():
     make_current()
 
+func start_moving():
+    moving = true
 
 func _process(delta):
     if moving:

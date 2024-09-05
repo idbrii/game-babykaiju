@@ -39,6 +39,7 @@ pushable="Objects that can be pushed by the player."
 Spawnpoint=""
 Kaiju="The Kaiju"
 Fade=""
+Player=""
 
 [importer_defaults]
 

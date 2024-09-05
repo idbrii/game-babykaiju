@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://ds8ahqmwe5tdr"]
+[gd_scene load_steps=7 format=4 uid="uid://ds8ahqmwe5tdr"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_ue45u"]
 [ext_resource type="Script" path="res://code/camera/fixedspeedcamera.gd" id="2_icg6v"]
 [ext_resource type="PackedScene" uid="uid://sixdkusjjf8l" path="res://levels/level_requirements.tscn" id="3_iqpqw"]
 [ext_resource type="PackedScene" uid="uid://b61if1k4lxo73" path="res://scenes/kaiju_full.tscn" id="4_kltto"]
 [ext_resource type="Script" path="res://code/game/final_level.gd" id="5_mhmp7"]
+[ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="6_i4n1b"]
 
 [node name="Level" instance=ExtResource("1_ue45u")]
 
@@ -27,5 +28,56 @@ position = Vector2(602, 872)
 [node name="KaijuFull" parent="." index="5" instance=ExtResource("4_kltto")]
 position = Vector2(218, 1051)
 
-[node name="FinalLevel" type="Node2D" parent="." index="6"]
+[node name="FinalLevel" type="Node2D" parent="." index="6" node_paths=PackedStringArray("player_text", "kaiju_text", "fixed_speed_camera")]
 script = ExtResource("5_mhmp7")
+player_text = NodePath("../Canvas/Root/PlayerText")
+kaiju_text = NodePath("../Canvas/Root/KaijuText")
+fixed_speed_camera = NodePath("../FixedSpeedCamera")
+
+[node name="Canvas" type="CanvasLayer" parent="." index="7"]
+process_mode = 4
+
+[node name="Root" type="Control" parent="Canvas" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("6_i4n1b")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerText" type="Label" parent="Canvas/Root" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.370313
+anchor_top = 0.7125
+anchor_right = 0.429688
+anchor_bottom = 0.713426
+offset_left = -94.0
+offset_top = -11.5
+offset_right = 94.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player Text"
+metadata/_edit_use_anchors_ = true
+
+[node name="KaijuText" type="Label" parent="Canvas/Root" index="1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.252252
+anchor_top = 0.574434
+anchor_right = 0.311627
+anchor_bottom = 0.57536
+offset_left = -62.324
+offset_top = -6.38892
+offset_right = 125.676
+offset_bottom = 16.6111
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player Text"
+metadata/_edit_use_anchors_ = true

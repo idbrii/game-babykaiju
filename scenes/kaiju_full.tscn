@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://b61if1k4lxo73"]
+[gd_scene load_steps=7 format=3 uid="uid://b61if1k4lxo73"]
 
-[ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_aoimw"]
 [ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_dswqo"]
 [ext_resource type="Texture2D" uid="uid://dkvepke1q1i7w" path="res://assets/hidef/kaijus/kaiju-full.png" id="5_k147p"]
 
@@ -57,8 +56,6 @@ shape = SubResource("2")
 
 [node name="visual" type="Node2D" parent="."]
 position = Vector2(0, -6)
-script = ExtResource("2_aoimw")
-player_path = NodePath("..")
 
 [node name="Polygon2D" type="Polygon2D" parent="visual"]
 visible = false

@@ -6,6 +6,7 @@ const DEFAULT_SPAWN_POS = Vector2(400, 300)
 var CHEATS_ENABLED := true
 
 func _input(event: InputEvent):
+    printt("Input: ", event.as_text())
     if Input.is_action_just_pressed("toggle_full_screen"):
         _swap_fullscreen_mode()
     elif Input.is_action_just_pressed("quit_game"):
@@ -15,8 +16,9 @@ func _input(event: InputEvent):
 
         ## Destroy existing player if there's any
         var players = get_tree().get_nodes_in_group("Player")
-        if players and players.size() > 0:
+        while players.size() > 0:
             players[0].queue_free()
+            players.remove_at(0)
 
         var spawn_points = get_tree().get_nodes_in_group("Spawnpoint")
         if spawn_points and spawn_points.size() > 0:

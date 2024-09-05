@@ -16,7 +16,7 @@
 </TextureAtlas>
 
 <TextureAtlas imagePath="jump.png">
-	<Config loop="false">
+	<Config loop="false" framerate="24">
 	<SubTexture name="jump0000" x="0" y="0" w="42" h="63"/>
 	<SubTexture name="jump0001" x="42" y="0" w="42" h="63"/>
 </TextureAtlas>

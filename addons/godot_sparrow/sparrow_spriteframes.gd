@@ -79,6 +79,8 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 	var sparrow_frames: Array = []
 
 	var is_looped = options.get('animations_looped', false)
+	var framerate = options.get('animation_framerate', 24)
+
 	while xml.read() == OK:
 		if xml.get_node_type() != XMLParser.NODE_ELEMENT:
 			continue
@@ -97,8 +99,9 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 			image = texture.get_image()
 			image.decompress()
 			image_texture = ImageTexture.create_from_image(image)
-			# New TextureAtlas, so reset loop flag.
+			# New TextureAtlas, so reset config.
 			is_looped = options.get('animations_looped', false)
+			framerate = options.get('animation_framerate', 24)
 			continue
 
 
@@ -109,6 +112,11 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 				is_looped = false
 			elif loop == "true":
 				is_looped = true
+
+			var fps = xml.get_named_attribute_value_safe('framerate')
+			if fps:
+				framerate = fps.to_int()
+				print(source_file, "framerate", framerate, fps)
 			continue
 
 
@@ -206,7 +214,7 @@ func _import(source_file: String, save_path: String, options: Dictionary,
 		if not sprite_frames.has_animation(frame.animation):
 			sprite_frames.add_animation(frame.animation)
 			sprite_frames.set_animation_loop(frame.animation, is_looped)
-			sprite_frames.set_animation_speed(frame.animation, options.get('animation_framerate', 24))
+			sprite_frames.set_animation_speed(frame.animation, framerate)
 
 		sparrow_frames.push_back(frame)
 

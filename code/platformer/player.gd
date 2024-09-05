@@ -161,7 +161,7 @@ func _physics_process(dt: float) -> void:
                 for i in get_slide_collision_count():
                     var col = get_slide_collision(i)
                     var body = col.get_collider()
-                    if body.is_in_group("pushable"):
+                    if body.is_in_group("pushable") and $"%Grabber".overlaps_body(body):
                         grab_object(body.get_node("Grabbable"))
                         break
             else:

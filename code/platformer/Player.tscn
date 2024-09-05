@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvboky6pqlyk0"]
+[gd_scene load_steps=13 format=3 uid="uid://cvboky6pqlyk0"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_r4v6y"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_u33gy"]
@@ -63,6 +63,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_usv2h"]
+
 [node name="Player" type="CharacterBody2D" groups=["Climber", "Player"]]
 z_index = 10
 collision_mask = 14
@@ -109,6 +111,14 @@ sprite_frames = SubResource("SpriteFrames_68iv1")
 
 [node name="hold_marker" type="Marker2D" parent="visual/AnimatedSprite2D/arm_root"]
 position = Vector2(1.75e+06, -6.5)
+
+[node name="Grabber" type="Area2D" parent="visual"]
+unique_name_in_owner = true
+position = Vector2(28, -25)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visual/Grabber"]
+shape = SubResource("CircleShape2D_usv2h")
 
 [node name="ui_root" type="Node2D" parent="."]
 visible = false

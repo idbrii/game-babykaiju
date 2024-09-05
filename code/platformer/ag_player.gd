@@ -22,11 +22,12 @@ func _ready() -> void:
 
 
 func _on_facing_flipped(should_face_right):
-    _sprite_animator.flip_h = not should_face_right
+    # No longer using flip_h because we want markers and visible child objects to flip too.
+    #~ _sprite_animator.flip_h = not should_face_right
     if should_face_right:
-        _sprite_arms.scale.x = 1
+        scale.x = 1
     else:
-        _sprite_arms.scale.x = -1
+        scale.x = -1
 
 func _is_falling(vel):
     return vel.y > 0

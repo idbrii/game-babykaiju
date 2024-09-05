@@ -26,9 +26,10 @@ func _input(event: InputEvent):
         if spawn_points and spawn_points.size() > 0:
             spawn_position = spawn_points[0].global_position
 
-        var ui = owner.find_child("WaitingForSpawn")
+        var ui = $"%Canvas"
         if ui:
-            ui.visible = false
+            ui.hide_waiting_for_spawn()
+
         var p = Player.instantiate()
         p.setup_input(event)
         get_tree().root.add_child(p)

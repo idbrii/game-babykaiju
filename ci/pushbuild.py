@@ -38,10 +38,16 @@ def build_platform(platform, export_root, output_artifact):
 
     print()
     print(f"Building {platform} build...")
+    godot = Path.home() / "scoop/apps/godot/current/godot.exe"
+    if not godot.is_file():
+        godot = "godot"
+
+    print("Using godot:", godot.as_posix())
+
     # pprint.pprint(
     subprocess.check_call(
         [
-            "godot",
+            godot,
             "--headless",
             "--export-release",
             platform,

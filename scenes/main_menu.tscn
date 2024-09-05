@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://r6mabbnqr8a0"]
+[gd_scene load_steps=4 format=3 uid="uid://r6mabbnqr8a0"]
 
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="1_6c1ay"]
 [ext_resource type="Script" path="res://code/main_menu/main_menu.gd" id="2_3epbf"]
 [ext_resource type="PackedScene" uid="uid://dmjtpxsbpkrsr" path="res://code/common/global_input.tscn" id="2_tokky"]
-[ext_resource type="PackedScene" uid="uid://ciih7ia18d4fq" path="res://levels/level_0.tscn" id="3_1e3ax"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button")]
 layout_mode = 3
@@ -15,7 +14,7 @@ grow_vertical = 2
 theme = ExtResource("1_6c1ay")
 script = ExtResource("2_3epbf")
 play_button = NodePath("VBoxContainer/PlayButton")
-game_scene = ExtResource("3_1e3ax")
+game_scene = "res://levels/level_master.tscn"
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0

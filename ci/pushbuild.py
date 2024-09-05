@@ -9,7 +9,7 @@ import git
 
 # Configuration
 project = "babykaiju"
-itch_project = f"idbrii/{project}"
+itch_project = f"idbrii/{project}" # None
 export_path = Path("C:/code/builds/") / project
 
 
@@ -49,19 +49,22 @@ def build_platform(platform, export_root, output_artifact):
             project_path,
         ]
     )
-    itch_channel = f"{itch_project}:{platform}"
-    print("Uploading as version", itch_channel, version)
-    # pprint.pprint(
-    subprocess.check_call(
-        [
-            "butler",
-            "push",
-            export_path,
-            itch_channel,
-            "--userversion",
-            version,
-        ]
-    )
+    if itch_project:
+        itch_channel = f"{itch_project}:{platform}"
+        print("Uploading as version", itch_channel, version)
+        # pprint.pprint(
+        subprocess.check_call(
+            [
+                "butler",
+                "push",
+                export_path,
+                itch_channel,
+                "--userversion",
+                version,
+            ]
+        )
+    else:
+        print("Skipping itchio upload (empty itch_project)")
 
 
 project_root = Path(__file__).resolve().parent.parent

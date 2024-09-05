@@ -139,6 +139,11 @@ func setup_input(event: InputEvent):
     _input = Baton.new(Baton.filter_for_input_device(INPUT_MAP, event))
 
 
+func override_input(baton):
+    _input = baton
+    set_block_input(baton == null)
+
+
 func _physics_process(dt: float) -> void:
     var input = get_input()
 
@@ -157,7 +162,7 @@ func _physics_process(dt: float) -> void:
                     var col = get_slide_collision(i)
                     var body = col.get_collider()
                     if body.is_in_group("pushable"):
-                        grab_object(body)
+                        grab_object(body.get_node("Grabbable"))
                         break
             else:
                 apply_push_to_collisions()
@@ -206,6 +211,12 @@ var states := {
     climb = {
         enter = _enter_state_climb,
         update = _update_state_climb,
+        exit = always_true1,
+        is_supported = always_true0,
+    },
+    ride = {
+        enter = _enter_state_ride,
+        update = _update_state_ride,
         exit = always_true1,
         is_supported = always_true0,
     },
@@ -490,7 +501,7 @@ func climb_movement(dt: float) -> void:
 # Grabbing {{{1
 @onready var _grab_arms := $"%arm_root/grab_arms"
 @onready var _hold_marker := $"%arm_root/hold_marker"
-var _held_object : RigidBody2D
+var _held_object : Grabbable
 
 func grab_object(target):
     drop_held_object()
@@ -505,3 +516,26 @@ func drop_held_object():
 
 func get_hold_marker():
     return _hold_marker
+
+# Riding {{{1
+var _ridden_object : Rideable
+
+func started_riding(mount):
+    _ridden_object = mount
+    _ridden_object.get_mount_body().override_input(_input)
+    sm.transition_to(states.ride, {})
+
+func stopped_riding(mount):
+    _ridden_object.get_mount_body().override_input(null)
+    _ridden_object = null
+
+
+func _enter_state_ride(_data):
+    velocity = Vector2.ZERO
+
+func _update_state_ride(dt):
+    var input = get_input()
+    if input.just_grab:
+        _ridden_object.eject(self)
+    if not _ridden_object:
+        sm.transition_to(states.freestyle, {})

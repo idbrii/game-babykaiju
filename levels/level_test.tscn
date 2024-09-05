@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://hve3qax2kqil"]
+[gd_scene load_steps=9 format=4 uid="uid://hve3qax2kqil"]
 
 [ext_resource type="Script" path="res://code/platformer/level.gd" id="1_k84m8"]
 [ext_resource type="PackedScene" uid="uid://pbf3l3hfrtbo" path="res://scenes/kaiju_teen.tscn" id="4_upiev"]
 [ext_resource type="TileSet" uid="uid://da1mj5hjtrv1q" path="res://assets/hidef/tilemap/tilemap_example.tres" id="5_05t2i"]
+[ext_resource type="PackedScene" uid="uid://cvboky6pqlyk0" path="res://code/platformer/Player.tscn" id="5_x0bfh"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://code/camera/ScreenCamera.tscn" id="6_s7x4h"]
 [ext_resource type="PackedScene" uid="uid://c5ogj7gf3f76" path="res://scenes/kaiju_baby.tscn" id="7_2mjom"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="7_x6sdq"]
@@ -56,6 +57,9 @@ text = "Press Start/Enter to play"
 metadata/_edit_use_anchors_ = true
 
 [node name="KaijuTeen" parent="LevelRequirements/Spawnpoint" instance=ExtResource("4_upiev")]
+position = Vector2(476, 69)
+
+[node name="Player" parent="LevelRequirements/Spawnpoint" instance=ExtResource("5_x0bfh")]
 
 [node name="global_input" type="Node" parent="LevelRequirements"]
 script = ExtResource("8_ej5k7")
@@ -65,5 +69,4 @@ tile_map_data = PackedByteArray("AADi/xAAAgAAAAIAAADi/w8AAgAEAAIAAADi/w4AAgAEAAE
 tile_set = ExtResource("5_05t2i")
 
 [node name="KaijuBaby" parent="." instance=ExtResource("7_2mjom")]
-position = Vector2(-1590, 898)
-drop_uplift = null
+position = Vector2(-1582, 864)

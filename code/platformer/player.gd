@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 signal facing_flipped(should_face_right)
 
+const TILE_SIZE : float = 64.0
 
 # BASIC MOVEMENT VARIABLES ---------------- #
 var face_direction := 1
@@ -30,7 +31,10 @@ var _block_input := false
 @export var gravity_max : float = 1020
 
 @export_group("Jump Movement")
-@export var jump_force : float = 1200
+## The number of tiles we can jump over. We always jump a bit higher than this
+## many tiles to ensure we can clear this jump. If you release jump earlier,
+## you won't jump this high.
+@export var jump_tile_height : int = 3
 @export var jump_cut : float = 0.4
 @export var jump_gravity_max : float = 1000
 @export var jump_hang_treshold : float = 2.0
@@ -336,7 +340,9 @@ func jump_logic(_delta: float) -> bool:
         if velocity.y > 0:
             velocity.y -= velocity.y
 
-        velocity.y = -jump_force
+        # Jump a bit higher than tuned height to ensure we can barely clear this jump.
+        var jump_height := TILE_SIZE * (jump_tile_height + 0.1)
+        velocity.y = -sqrt(2 * gravity_acceleration * jump_height)
 
     # We're not actually interested in checking if the player is holding the
     # jump button. We only care about press and release.

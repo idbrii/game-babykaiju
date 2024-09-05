@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5ogj7gf3f76"]
 
-[ext_resource type="Script" path="res://code/platformer/grabbable.gd" id="1_v183x"]
+[ext_resource type="Script" path="res://code/game/grabbable.gd" id="1_v183x"]
 [ext_resource type="SpriteFrames" uid="uid://dj4tw33i2irhi" path="res://assets/anim/kaiju_baby/kaiju_baby.xml" id="2_r17th"]
 [ext_resource type="Script" path="res://code/game/kaiju.gd" id="2_txa02"]
 

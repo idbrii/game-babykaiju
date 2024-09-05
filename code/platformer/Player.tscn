@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_u33gy"]
 [ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_2rwxb"]
 [ext_resource type="SpriteFrames" uid="uid://bw5ihp1jhds5f" path="res://assets/anim/p1_arm/p1_arm.xml" id="4_u7qjc"]
-[ext_resource type="Script" path="res://code/platformer/grabbable.gd" id="5_5r3n3"]
+[ext_resource type="Script" path="res://code/game/grabbable.gd" id="5_5r3n3"]
 [ext_resource type="Script" path="res://code/game/bouncer.gd" id="6_g0kf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ff1r"]

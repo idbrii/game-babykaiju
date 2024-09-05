@@ -7,11 +7,14 @@ var CHEATS_ENABLED := true
 
 func _input(event: InputEvent):
     printt("Input: ", event.as_text())
-    if Input.is_action_just_pressed("toggle_full_screen"):
+    if event.is_action_pressed("toggle_full_screen"):
+        get_viewport().set_input_as_handled()
         _swap_fullscreen_mode()
-    elif Input.is_action_just_pressed("quit_game"):
+    elif event.is_action_pressed("quit_game"):
+        get_viewport().set_input_as_handled()
         get_tree().quit()
     elif event.is_action_pressed("spawn_player"):
+        get_viewport().set_input_as_handled()
         var spawn_position = DEFAULT_SPAWN_POS
 
         ## Destroy existing player if there's any
@@ -35,13 +38,16 @@ func _input(event: InputEvent):
         _cheat_input(event)
 
 
-func _cheat_input(_event: InputEvent):
-    if Input.is_action_just_pressed("cheat_slomo"):
+func _cheat_input(event: InputEvent):
+    if event.is_action_pressed("cheat_slomo"):
+        get_viewport().set_input_as_handled()
         if Engine.time_scale < 1:
             Engine.time_scale = 1
         else:
             Engine.time_scale = 0.1
-    elif Input.is_action_just_pressed("cheat_teleport"):
+
+    elif event.is_action_pressed("cheat_teleport"):
+        get_viewport().set_input_as_handled()
         var player = get_tree().get_nodes_in_group("Player")[0]
         player.global_position = player.get_global_mouse_position()
 

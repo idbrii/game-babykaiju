@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://pbf3l3hfrtbo"]
+[gd_scene load_steps=17 format=3 uid="uid://pbf3l3hfrtbo"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_lraxt"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_a3s2x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2p61py4i3pcy" path="res://assets/hidef/kenney_abstract_platformer/tilesheet_complete.png" id="4_lc417"]
 [ext_resource type="Script" path="res://code/game/rideable.gd" id="6_ilp53"]
 [ext_resource type="Script" path="res://code/game/teenkaiju.gd" id="6_jrq0a"]
+[ext_resource type="Script" path="res://code/game/bouncer.gd" id="8_7p17h"]
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(94, 123)
@@ -67,6 +68,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxwhu"]
 size = Vector2(82, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgvu4"]
+radius = 19.0263
 
 [node name="KaijuTeen" type="CharacterBody2D" groups=["Kaiju", "Player"]]
 z_index = 10
@@ -142,3 +146,12 @@ shape = SubResource("RectangleShape2D_uxwhu")
 
 [node name="TeenKaiju" type="Node2D" parent="."]
 script = ExtResource("6_jrq0a")
+
+[node name="HeadProtector" type="Area2D" parent="."]
+position = Vector2(0, -123)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_7p17h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadProtector"]
+shape = SubResource("CircleShape2D_bgvu4")

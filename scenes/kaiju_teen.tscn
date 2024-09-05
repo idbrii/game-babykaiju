@@ -72,7 +72,7 @@ size = Vector2(82, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bgvu4"]
 radius = 19.0263
 
-[node name="KaijuTeen" type="CharacterBody2D" groups=["Kaiju", "Player"]]
+[node name="KaijuTeen" type="CharacterBody2D" groups=["Kaiju"]]
 z_index = 10
 collision_mask = 14
 floor_snap_length = 16.0

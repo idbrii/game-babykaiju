@@ -6,7 +6,6 @@ const DEFAULT_SPAWN_POS = Vector2(400, 300)
 var CHEATS_ENABLED := true
 
 func _input(event: InputEvent):
-    printt("Input: ", event.as_text())
     if event.is_action_pressed("toggle_full_screen"):
         get_viewport().set_input_as_handled()
         _swap_fullscreen_mode()

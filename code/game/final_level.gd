@@ -4,6 +4,7 @@ var player
 @export var player_text: Label
 @export var kaiju_text: Label
 @export var fixed_speed_camera: Node2D
+@export var kaiju: Node2D
 
 func _ready():
     _run()
@@ -18,6 +19,7 @@ func _run():
     player.set_block_input(true)
 
     await _wait(1)
+    kaiju.grow1()
     _kaiju_say("NOM NOM NOM", 20)
 
     await _wait(2)
@@ -25,19 +27,20 @@ func _run():
     _player_say("Kaiju, what are you doing!?")
 
     await _wait(2)
-    _kaiju_say("NOM NOM NOM", 45)
+    kaiju.grow2()
+    _kaiju_say("NOM NOM NOM", 45, Vector2(50, -200))
 
     await _wait(2)
     _player_say("You have to stop! Please, Kaiju!")
 
     await _wait(2)
-    _kaiju_say("RAAAAARRRR", 60)
+    _kaiju_say("RAAAAARRRR", 60, Vector2(0, -100))
 
     await _wait(2)
     _player_say("Kaiju, please! It's me!")
 
     await _wait(2)
-    _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80)
+    _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80, Vector2(0, -50))
 
     await _wait(2)
     _player_say("Oh no!")
@@ -46,6 +49,7 @@ func _run():
     _player_say("")
     player.set_block_input(false)
     fixed_speed_camera.start_moving()
+    kaiju.start_chasing()
 
 
 
@@ -68,10 +72,11 @@ func _player_say(text: String):
     player_text.text = text
     kaiju_text.visible = false
 
-func _kaiju_say(text: String, font_size: int):
+func _kaiju_say(text: String, font_size: int, offset: Vector2 = Vector2.ZERO):
     kaiju_text.visible = true
     kaiju_text.text = text
     kaiju_text.add_theme_font_size_override("font_size", font_size)
+    kaiju_text.position = kaiju_text.position + offset
     player_text.visible = false
 
 func _wait(seconds: float):

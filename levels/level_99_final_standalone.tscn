@@ -20,19 +20,21 @@ tile_map_data = PackedByteArray("AAAAABAAAgAGAAMAAAABABAAAgACAAMAAAACABAAAgACAAM
 [node name="FixedSpeedCamera" type="Camera2D" parent="." index="3"]
 position = Vector2(960, 540)
 script = ExtResource("2_icg6v")
-speed = 150.0
+speed = 200.0
 
 [node name="Spawnpoint" type="Marker2D" parent="." index="4" groups=["Spawnpoint"]]
-position = Vector2(602, 872)
+position = Vector2(674, 872)
 
 [node name="KaijuFull" parent="." index="5" instance=ExtResource("4_kltto")]
 position = Vector2(218, 1051)
+speed = 200.0
 
-[node name="FinalLevel" type="Node2D" parent="." index="6" node_paths=PackedStringArray("player_text", "kaiju_text", "fixed_speed_camera")]
+[node name="FinalLevel" type="Node2D" parent="." index="6" node_paths=PackedStringArray("player_text", "kaiju_text", "fixed_speed_camera", "kaiju")]
 script = ExtResource("5_mhmp7")
 player_text = NodePath("../Canvas/Root/PlayerText")
 kaiju_text = NodePath("../Canvas/Root/KaijuText")
 fixed_speed_camera = NodePath("../FixedSpeedCamera")
+kaiju = NodePath("../KaijuFull")
 
 [node name="Canvas" type="CanvasLayer" parent="." index="7"]
 process_mode = 4
@@ -52,10 +54,10 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.370313
-anchor_top = 0.7125
-anchor_right = 0.429688
-anchor_bottom = 0.713426
+anchor_left = 0.394792
+anchor_top = 0.710648
+anchor_right = 0.454167
+anchor_bottom = 0.711574
 offset_left = -94.0
 offset_top = -11.5
 offset_right = 94.0
@@ -69,15 +71,15 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.252252
-anchor_top = 0.574434
-anchor_right = 0.311627
-anchor_bottom = 0.57536
+anchor_left = 0.252773
+anchor_top = 0.499434
+anchor_right = 0.312148
+anchor_bottom = 0.50036
 offset_left = -62.324
 offset_top = -6.38892
 offset_right = 125.676
 offset_bottom = 16.6111
 grow_horizontal = 2
 grow_vertical = 2
-text = "Player Text"
+text = "Kaiju Text"
 metadata/_edit_use_anchors_ = true

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b61if1k4lxo73"]
+[gd_scene load_steps=11 format=3 uid="uid://b61if1k4lxo73"]
 
+[ext_resource type="Script" path="res://code/game/kaiju_full.gd" id="1_26bmo"]
 [ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_dswqo"]
 [ext_resource type="Texture2D" uid="uid://dkvepke1q1i7w" path="res://assets/hidef/kaijus/kaiju-full.png" id="5_k147p"]
 
 [sub_resource type="RectangleShape2D" id="2"]
-size = Vector2(94, 123)
+size = Vector2(388, 1039)
 
 [sub_resource type="Animation" id="3"]
 resource_name = "Jump"
@@ -39,19 +40,75 @@ tracks/0/keys = {
 "values": [Vector2(1, 1), Vector2(1.4, 1), Vector2(1, 1)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
-_data = {
-"Jump": SubResource("3"),
-"Land": SubResource("4")
+[sub_resource type="Animation" id="Animation_03ogu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
-[node name="KaijuFull" type="CharacterBody2D" groups=["Kaiju"]]
+[sub_resource type="Animation" id="Animation_8l2of"]
+resource_name = "Grow1"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_0ebbg"]
+resource_name = "Grow2"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lb64"]
+_data = {
+"Grow1": SubResource("Animation_8l2of"),
+"Grow2": SubResource("Animation_0ebbg"),
+"Jump": SubResource("3"),
+"Land": SubResource("4"),
+"RESET": SubResource("Animation_03ogu")
+}
+
+[node name="KaijuFull" type="CharacterBody2D" node_paths=PackedStringArray("anim_player") groups=["Kaiju"]]
 z_index = 10
-collision_mask = 14
+collision_layer = 4
+collision_mask = 0
+motion_mode = 1
 floor_snap_length = 16.0
+script = ExtResource("1_26bmo")
+anim_player = NodePath("visual/AnimationPlayer")
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -61.5)
+position = Vector2(4, -519.5)
 shape = SubResource("2")
 
 [node name="visual" type="Node2D" parent="."]

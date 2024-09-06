@@ -34,7 +34,6 @@ game_over_quit_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/Qui
 victory_panel = NodePath("../Canvas/Root/VictoryPanel")
 victory_quit_button = NodePath("../Canvas/Root/VictoryPanel/VBoxContainer/QuitButton")
 quit_scene = ExtResource("3_nc52y")
-skip_intro = true
 
 [node name="LevelRequirements" parent="." index="1" instance=ExtResource("3_iqpqw")]
 

@@ -35,7 +35,7 @@ func _run():
         await _wait(1)
         kaiju.play_anim("eat_berry")
         kaiju.grow1()
-        _kaiju_say("NOM NOM NOM", 20)
+        _kaiju_say("NOM NOM NOM", 28)
 
         await _wait(2.1)
         kaiju.play_anim("idle")

@@ -49,6 +49,9 @@ var _block_input := false
 @export_group("Grabbing")
 @export var has_feature_grab := true
 
+@export_group("References")
+@export var player_text : Label
+
 
 var _input : Baton
 var jump_coyote_timer : float = 0
@@ -147,6 +150,8 @@ func override_input(baton):
     _input = baton
     set_block_input(baton == null)
 
+func say_text(text: String):
+    player_text.text = text
 
 func _physics_process(dt: float) -> void:
     var input = get_input()

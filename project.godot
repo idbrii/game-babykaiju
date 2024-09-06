@@ -42,6 +42,7 @@ Spawnpoint=""
 Kaiju="The Kaiju"
 Fade=""
 Player=""
+PlayerText=""
 
 [importer_defaults]
 

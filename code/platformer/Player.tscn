@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvboky6pqlyk0"]
+[gd_scene load_steps=14 format=3 uid="uid://cvboky6pqlyk0"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_r4v6y"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_u33gy"]
 [ext_resource type="SpriteFrames" uid="uid://yaynw5ts32wc" path="res://assets/anim/player1/player1.xml" id="3_2rwxb"]
 [ext_resource type="SpriteFrames" uid="uid://bw5ihp1jhds5f" path="res://assets/anim/p1_arm/p1_arm.xml" id="4_u7qjc"]
 [ext_resource type="Script" path="res://code/game/grabbable.gd" id="5_5r3n3"]
+[ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="5_rytkj"]
 [ext_resource type="Script" path="res://code/game/bouncer.gd" id="6_g0kf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ff1r"]
@@ -55,36 +56,14 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqvdo"]
 radius = 7.0
 
-[node name="Player" type="CharacterBody2D" groups=["Climber", "Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_text") groups=["Climber", "Player"]]
 z_index = 10
 collision_layer = 9
 collision_mask = 6
 floor_snap_length = 16.0
 script = ExtResource("1_r4v6y")
-run_threshold = null
-max_walk_speed = null
 max_run_speed = 700.0
-acceleration = null
-turning_acceleration = null
-drag_deceleration = null
-gravity_acceleration = null
-gravity_max = null
-jump_tile_height = null
-jump_cut = null
-jump_gravity_max = null
-jump_hang_treshold = null
-jump_hang_gravity_mult = null
-jump_coyote = null
-jump_buffer = null
-push_strength = null
-has_feature_grab = null
-max_dash_speed = null
-dash_force = null
-dash_deceleration = null
-dash_cooldown = null
-dash_duration = null
-max_climb_speed = null
-climb_jump_speed = null
+player_text = NodePath("ui_root/PlayerText")
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -31.5)
@@ -139,15 +118,24 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_usv2h")
 
 [node name="ui_root" type="Node2D" parent="."]
-visible = false
 
 [node name="label_bookmark" type="Control" parent="ui_root"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -50.0
 offset_top = -69.0
 offset_right = -50.0
 offset_bottom = -69.0
+
+[node name="PlayerText" type="Label" parent="ui_root" groups=["PlayerText"]]
+offset_left = -217.0
+offset_top = -112.0
+offset_right = 265.0
+offset_bottom = -88.0
+theme = ExtResource("5_rytkj")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
 
 [node name="Grabbable" type="Node2D" parent="." node_paths=PackedStringArray("_facing_node")]
 script = ExtResource("5_5r3n3")

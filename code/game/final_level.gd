@@ -1,7 +1,6 @@
 extends Node2D
 
 var player
-@export var player_text: Label
 @export var kaiju_text: Label
 @export var fixed_speed_camera: Node2D
 @export var kaiju: Node2D
@@ -27,7 +26,6 @@ func _run():
 
     await _wait(0.1)
 
-    player_text.visible = false
     player = get_tree().get_first_node_in_group("Player")
     player.set_block_input(true)
 
@@ -86,7 +84,6 @@ func _init_level():
     spawn_event.pressed = true
     Input.parse_input_event(spawn_event)
 
-    player_text.visible = false
     kaiju_text.visible = false
 
     var ui = owner.find_child("WaitingForSpawn")
@@ -180,8 +177,7 @@ func _on_quit_pressed():
     get_tree().change_scene_to_packed(quit_scene)
 
 func _player_say(text: String):
-    player_text.visible = true
-    player_text.text = text
+    player.say_text(text)
     kaiju_text.visible = false
 
 func _kaiju_say(text: String, font_size: int, offset: Vector2 = Vector2.ZERO):
@@ -189,7 +185,7 @@ func _kaiju_say(text: String, font_size: int, offset: Vector2 = Vector2.ZERO):
     kaiju_text.text = text
     kaiju_text.add_theme_font_size_override("font_size", font_size)
     kaiju_text.position = kaiju_text.position + offset
-    player_text.visible = false
+    player.say_text("")
 
 func _wait(seconds: float):
     return get_tree().create_timer(seconds).timeout

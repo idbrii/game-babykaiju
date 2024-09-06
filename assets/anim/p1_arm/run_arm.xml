@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="run_arm.png">
+	<SubTexture name="run_arm0000" x="0" y="0" w="26" h="15"/>
+</TextureAtlas>

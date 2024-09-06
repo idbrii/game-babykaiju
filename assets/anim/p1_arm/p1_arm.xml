@@ -1,7 +1,11 @@
 
 <TextureAtlas imagePath="idlearm.png">
-	<SubTexture name="idlearm0000" x="0" y="0" w="28" h="17"/>
-	<SubTexture name="idlearm0001" x="0" y="17" w="28" h="17"/>
+	<SubTexture name="idle_arm0000" x="0" y="0" w="28" h="17"/>
+	<SubTexture name="idle_arm0001" x="0" y="17" w="28" h="17"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="jump_arm.png">
+	<SubTexture name="jump_arm0000" x="0" y="0" w="26" h="16"/>
 </TextureAtlas>
 
 <TextureAtlas imagePath="jumparm.png">
@@ -9,4 +13,8 @@
 	<SubTexture name="jumparm0001" x="29" y="0" w="29" h="32"/>
 	<SubTexture name="jumparm0002" x="0" y="32" w="29" h="32"/>
 	<SubTexture name="jumparm0003" x="29" y="32" w="29" h="32"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="run_arm.png">
+	<SubTexture name="run_arm0000" x="0" y="0" w="26" h="15"/>
 </TextureAtlas>

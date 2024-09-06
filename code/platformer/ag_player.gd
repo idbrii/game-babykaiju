@@ -176,6 +176,7 @@ func _enter_state_climb(_data):
 
 func _enter_state_jump(_data):
     _play_anim("jump")
+    _play_arms_anim("jump_arm")
     # Don't squash because we have animation.
     #~ _play_fx("Jump")
 
@@ -208,10 +209,11 @@ func _enter_state_dash(_data):
 
 func _enter_state_ground_idle(_data):
     _play_anim("idle")
-    _play_arms_anim("idlearms")
+    _play_arms_anim("idle_arm")
 
 func _enter_state_ground_run(_data):
     _play_anim("run")
+    _play_arms_anim("run_arm")
 
 
 func _process(dt: float) -> void:

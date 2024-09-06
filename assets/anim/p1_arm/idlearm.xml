@@ -1,4 +1,4 @@
 <TextureAtlas imagePath="idlearm.png">
-	<SubTexture name="idlearm0000" x="0" y="0" w="28" h="17"/>
-	<SubTexture name="idlearm0001" x="0" y="17" w="28" h="17"/>
+	<SubTexture name="idle_arm0000" x="0" y="0" w="28" h="17"/>
+	<SubTexture name="idle_arm0001" x="0" y="17" w="28" h="17"/>
 </TextureAtlas>

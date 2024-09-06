@@ -13,7 +13,7 @@ func on_eaten(food, _eater):
         "food_remaining": food_remaining
     }))
     if food_remaining == 0:
-        await get_tree().create_timer(1).timeout
+        await get_tree().create_timer(0.5).timeout
         var b = _final_berry.instantiate()
         add_child(b)
         b.global_position = _berry_spawn.global_position

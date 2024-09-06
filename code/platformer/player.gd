@@ -49,6 +49,10 @@ var _block_input := false
 @export_group("Grabbing")
 @export var has_feature_grab := true
 
+@export_group("Riding")
+@export var _normal_anim : SpriteFrames
+@export var _riding_anim : SpriteFrames
+
 @export_group("References")
 @export var player_text : Label
 
@@ -97,6 +101,7 @@ var INPUT_MAP := {
 }
 
 @onready var sm := StateMachine.create(self, states)
+@onready var _animator := $visual/AnimatedSprite2D
 
 
 func set_block_input(should_block):
@@ -550,13 +555,22 @@ func get_hold_marker():
 var _ridden_object : Rideable
 
 func started_riding(mount):
+    printt(self, "started riding", mount.owner)
     _ridden_object = mount
     _ridden_object.get_mount_body().override_input(_input)
     sm.transition_to(states.ride, {})
+    # TODO: This makes the kaiju disappear.
+    #~ mount.owner._animator.sprite_frames = _riding_anim
+    #~ mount.owner._animator.offset.y = -56
+    #~ mount.owner._animator.play("idle")
+
 
 func stopped_riding(mount):
     _ridden_object.get_mount_body().override_input(null)
     _ridden_object = null
+    #~ mount.owner._animator.sprite_frames = _normal_anim
+    #~ mount.owner._animator.offset.y = -12
+    #~ mount.owner._animator.play("idle")
 
 func is_riding():
     return _ridden_object != null

@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://deb4eejnmbkji"]
+[gd_scene load_steps=17 format=3 uid="uid://deb4eejnmbkji"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_lraxt"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_a3s2x"]
 [ext_resource type="SpriteFrames" uid="uid://cn33bwblf3q2j" path="res://assets/anim/kaiju_teen/kaiju_teen.xml" id="3_07k72"]
+[ext_resource type="SpriteFrames" uid="uid://bdcf76g1gacf" path="res://assets/anim/kaiju_teen_riding/kaiju_teen_riding.xml" id="3_b42va"]
 [ext_resource type="SpriteFrames" uid="uid://bw5ihp1jhds5f" path="res://assets/anim/p1_arm/p1_arm.xml" id="4_q6ra1"]
 [ext_resource type="Script" path="res://code/game/rideable.gd" id="6_ilp53"]
 [ext_resource type="Script" path="res://code/game/teenkaiju.gd" id="6_jrq0a"]
@@ -82,6 +83,8 @@ jump_coyote = null
 jump_buffer = null
 push_strength = null
 has_feature_grab = false
+_normal_anim = ExtResource("3_07k72")
+_riding_anim = ExtResource("3_b42va")
 max_dash_speed = null
 dash_force = null
 dash_deceleration = null

@@ -4,13 +4,14 @@
 [ext_resource type="Script" path="res://scenes/fire.gd" id="1_yfi2c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlgxv"]
-size = Vector2(200, 2000)
+size = Vector2(243, 2000)
 
 [node name="Fire" type="Node2D" node_paths=PackedStringArray("area")]
 script = ExtResource("1_yfi2c")
 area = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 sprite_frames = ExtResource("1_gvfq6")
 animation = &"fire instance 1"
 frame_progress = 0.404976
@@ -22,4 +23,5 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
+position = Vector2(-21.5, 0)
 shape = SubResource("RectangleShape2D_rlgxv")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dno7wg15l6mjt"]
+
+[ext_resource type="SpriteFrames" uid="uid://bw288aafv1to5" path="res://assets/hidef/fx/transformtwinkles.xml" id="1_csk33"]
+
+[node name="Twinkle" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_csk33")
+animation = &"fx"

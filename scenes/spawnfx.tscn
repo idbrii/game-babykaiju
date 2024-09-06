@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdcdtbkmxab2e"]
+
+[ext_resource type="PackedScene" uid="uid://dno7wg15l6mjt" path="res://scenes/twinkle.tscn" id="1_qua7k"]
+
+[node name="spawnfx" type="Node2D"]
+
+[node name="Twinkle" parent="." instance=ExtResource("1_qua7k")]
+position = Vector2(-50, -157)
+animation = &"fx"
+autoplay = "fx"
+frame = 0
+frame_progress = 0.0
+
+[node name="Twinkle2" parent="." instance=ExtResource("1_qua7k")]
+position = Vector2(58, -95)
+
+[node name="Twinkle3" parent="." instance=ExtResource("1_qua7k")]
+position = Vector2(-35, -32)

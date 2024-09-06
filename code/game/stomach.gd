@@ -4,6 +4,7 @@ extends Node2D
 @export var anim : AnimatedSprite2D
 @export var replacement_for_self_on_transform : PackedScene
 @export_range(1, 20000) var transformation_blast_strength := 10000.0
+@export var spawn_on_transform : PackedScene
 
 var eat_count := 0
 
@@ -47,6 +48,11 @@ func eat(food : Edible):
         if not penultimate:
             # Not held, our parent should be good.
             penultimate = owner
+        penultimate.get_parent().add_child(s)
+        s.global_position = transform_spawnpoint
+
+        # TODO: Could be nicer spawn fx
+        s = spawn_on_transform.instantiate()
         penultimate.get_parent().add_child(s)
         s.global_position = transform_spawnpoint
 

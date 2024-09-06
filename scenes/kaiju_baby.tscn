@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5ogj7gf3f76"]
+[gd_scene load_steps=8 format=3 uid="uid://c5ogj7gf3f76"]
 
 [ext_resource type="Script" path="res://code/game/grabbable.gd" id="1_v183x"]
 [ext_resource type="SpriteFrames" uid="uid://dj4tw33i2irhi" path="res://assets/anim/kaiju_baby/kaiju_baby.xml" id="2_r17th"]
 [ext_resource type="Script" path="res://code/game/kaiju.gd" id="2_txa02"]
 [ext_resource type="Script" path="res://code/game/stomach.gd" id="4_4jixe"]
 [ext_resource type="PackedScene" uid="uid://deb4eejnmbkji" path="res://scenes/kaiju_teen.tscn" id="5_5qdu7"]
+[ext_resource type="PackedScene" uid="uid://cdcdtbkmxab2e" path="res://scenes/spawnfx.tscn" id="6_wfgaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yp6dw"]
 size = Vector2(58, 65)
@@ -39,3 +40,4 @@ _facing_node = NodePath("../visual")
 script = ExtResource("4_4jixe")
 anim = NodePath("../visual/AnimatedSprite2D")
 replacement_for_self_on_transform = ExtResource("5_5qdu7")
+spawn_on_transform = ExtResource("6_wfgaq")

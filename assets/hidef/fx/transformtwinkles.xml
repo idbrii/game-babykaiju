@@ -1,0 +1,20 @@
+﻿<TextureAtlas imagePath="transformtwinkles.png">
+	<SubTexture name="fx0000" x="0" y="0" w="30" h="43"/>
+	<SubTexture name="fx0001" x="30" y="0" w="30" h="43"/>
+	<SubTexture name="fx0002" x="60" y="0" w="30" h="43"/>
+	<SubTexture name="fx0003" x="90" y="0" w="30" h="43"/>
+	<SubTexture name="fx0004" x="120" y="0" w="30" h="43"/>
+	<SubTexture name="fx0005" x="150" y="0" w="30" h="43"/>
+	<SubTexture name="fx0006" x="180" y="0" w="30" h="43"/>
+	<SubTexture name="fx0007" x="210" y="0" w="30" h="43"/>
+	<SubTexture name="fx0008" x="0" y="43" w="30" h="43"/>
+	<SubTexture name="fx0009" x="30" y="43" w="30" h="43"/>
+	<SubTexture name="fx0010" x="60" y="43" w="30" h="43"/>
+	<SubTexture name="fx0011" x="90" y="43" w="30" h="43"/>
+	<SubTexture name="fx0012" x="120" y="43" w="30" h="43"/>
+	<SubTexture name="fx0013" x="150" y="43" w="30" h="43"/>
+	<SubTexture name="fx0014" x="180" y="43" w="30" h="43"/>
+	<SubTexture name="fx0015" x="210" y="43" w="30" h="43"/>
+	<SubTexture name="fx0016" x="0" y="86" w="30" h="43"/>
+	<SubTexture name="fx0017" x="30" y="86" w="30" h="43"/>
+</TextureAtlas>

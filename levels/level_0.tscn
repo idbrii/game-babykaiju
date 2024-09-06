@@ -15,7 +15,8 @@ texture = ExtResource("2_wdvkl")
 position = Vector2(0, 732)
 texture = ExtResource("3_082qh")
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundSprite" index="1"]
+[node name="Trees" type="Sprite2D" parent="BackgroundSprite" index="1"]
+position = Vector2(0, -15)
 texture = ExtResource("3_2om72")
 
 [node name="TileMapLayer" parent="." index="2"]

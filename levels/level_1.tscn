@@ -18,7 +18,7 @@ position = Vector2(0, 225)
 texture = ExtResource("2_7wfib")
 
 [node name="Trees" type="Sprite2D" parent="BackgroundSprite" index="1"]
-position = Vector2(12, -387)
+position = Vector2(0, -385)
 texture = ExtResource("4_6lrel")
 
 [node name="Egg" parent="." index="2" instance=ExtResource("2_chdhc")]

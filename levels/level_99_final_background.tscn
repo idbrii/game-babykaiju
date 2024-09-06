@@ -23,6 +23,14 @@ texture = ExtResource("1_jgt1e")
 position = Vector2(4945.71, 17.1429)
 texture = ExtResource("1_jgt1e")
 
+[node name="Sky4" type="Sprite2D" parent="SkyRoot"]
+position = Vector2(7842.86, 131.429)
+texture = ExtResource("1_jgt1e")
+
+[node name="Sky5" type="Sprite2D" parent="SkyRoot"]
+position = Vector2(10695.7, 115.714)
+texture = ExtResource("1_jgt1e")
+
 [node name="BuildingsRoot" type="Node2D" parent="."]
 z_index = 2
 position = Vector2(0, 540)
@@ -35,6 +43,16 @@ texture = ExtResource("2_gu8f7")
 position = Vector2(2880, 0)
 texture = ExtResource("2_gu8f7")
 
+[node name="BuildingsA3" type="Sprite2D" parent="BuildingsRoot"]
+position = Vector2(3965, 6)
+texture = ExtResource("2_gu8f7")
+flip_h = true
+
 [node name="BuildingsB1" type="Sprite2D" parent="BuildingsRoot"]
 position = Vector2(2429, 0)
 texture = ExtResource("3_jdheq")
+
+[node name="BuildingsB2" type="Sprite2D" parent="BuildingsRoot"]
+position = Vector2(4948, -22)
+texture = ExtResource("3_jdheq")
+flip_h = true

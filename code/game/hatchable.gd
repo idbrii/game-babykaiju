@@ -26,7 +26,7 @@ func _on_body_entered(toucher):
 
     visible = false
     var baby = KaijuBaby.instantiate()
-    get_parent().add_child(baby)
+    toucher.get_parent().add_child(baby)
     baby.add_collision_exception_with(toucher)
     baby.global_position = global_position
 

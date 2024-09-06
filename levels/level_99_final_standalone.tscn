@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ds8ahqmwe5tdr"]
+[gd_scene load_steps=11 format=4 uid="uid://ds8ahqmwe5tdr"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_ue45u"]
 [ext_resource type="Script" path="res://code/camera/fixedspeedcamera.gd" id="2_icg6v"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://code/game/final_level.gd" id="5_mhmp7"]
 [ext_resource type="PackedScene" uid="uid://b5pd3gduenv1n" path="res://levels/level_99_final_background.tscn" id="5_p1udd"]
 [ext_resource type="Theme" uid="uid://b2iihkgpykjvu" path="res://resources/ui/theme_shared.tres" id="6_i4n1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgdb"]
+size = Vector2(20, 1200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qll5u"]
 size = Vector2(200, 1200)
@@ -26,6 +29,7 @@ game_over_quit_button = NodePath("../Canvas/Root/GameOverPanel/VBoxContainer/Qui
 victory_panel = NodePath("../Canvas/Root/VictoryPanel")
 victory_quit_button = NodePath("../Canvas/Root/VictoryPanel/VBoxContainer/QuitButton")
 quit_scene = ExtResource("3_nc52y")
+skip_intro = true
 
 [node name="LevelRequirements" parent="." index="1" instance=ExtResource("3_iqpqw")]
 
@@ -43,6 +47,13 @@ speed = 200.0
 position = Vector2(960, 540)
 script = ExtResource("2_icg6v")
 speed = 200.0
+
+[node name="BlockPlayer" type="StaticBody2D" parent="FixedSpeedCamera" index="0"]
+position = Vector2(956, 0)
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="FixedSpeedCamera/BlockPlayer" index="0"]
+shape = SubResource("RectangleShape2D_gmgdb")
 
 [node name="Spawnpoint" type="Marker2D" parent="." index="7" groups=["Spawnpoint"]]
 position = Vector2(690, 872)

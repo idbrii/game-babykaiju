@@ -134,13 +134,17 @@ func _on_player_escaped(_p: Node2D):
 
     await _wait(1)
 
+    ## case where the player was eaten after the camera stopped moving
+    if not player.visible:
+        return
+
     kaiju.stop()
-
-    await _wait(0.5)
-
     player.set_block_input(true)
+    ## If the player is too close to the right side of the screen, move him a bit to the left so we can read the text on its head
+    if player.get_screen_transform().get_origin().x >= 1850:
+        player.global_position = player.global_position - Vector2(120, 0)
 
-    await _wait(1)
+    await _wait(1.5)
     kaiju.play_anim("roar")
     _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80)
 

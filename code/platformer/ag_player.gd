@@ -98,6 +98,11 @@ var states := {
         update = _update_state_dash,
         exit = always_true1,
     },
+    ride = {
+        enter = _enter_state_ride,
+        update = _update_state_ride,
+        exit = always_true1,
+    },
 }
 
 func _compute_state():
@@ -107,6 +112,8 @@ func _compute_state():
         return states.climb
     elif _player.is_dashing():
         return states.dash
+    elif _player.is_riding():
+        return states.ride
     elif _is_soaring(_player.velocity):
         return states.jump
     elif _is_falling(_player.velocity):
@@ -181,6 +188,15 @@ func _enter_state_land(_data):
 
 func _update_state_land(dt):
     if not _sprite_animator.is_playing():
+        return sm.transition_to(states.ground_idle, {})
+    return _update_state_generic(dt)
+
+
+func _enter_state_ride(_data):
+    _play_anim("sit")
+
+func _update_state_ride(dt):
+    if not _player.is_riding():
         return sm.transition_to(states.ground_idle, {})
     return _update_state_generic(dt)
 

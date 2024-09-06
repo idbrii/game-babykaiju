@@ -539,6 +539,9 @@ func stopped_riding(mount):
     _ridden_object.get_mount_body().override_input(null)
     _ridden_object = null
 
+func is_riding():
+    return _ridden_object != null
+
 
 func _enter_state_ride(_data):
     velocity = Vector2.ZERO

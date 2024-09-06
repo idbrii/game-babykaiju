@@ -40,3 +40,8 @@
 	<SubTexture name="runarm0002" x="0" y="21" w="28" h="21"/>
 	<SubTexture name="runarm0003" x="28" y="21" w="28" h="21"/>
 </TextureAtlas>
+
+<TextureAtlas imagePath="sit.png">
+	<SubTexture name="sit0000" x="0" y="0" w="53" h="58"/>
+	<SubTexture name="sit0001" x="53" y="0" w="53" h="58"/>
+</TextureAtlas>

@@ -127,7 +127,7 @@ sprite_frames = ExtResource("4_q6ra1")
 animation = &"idlearm"
 
 [node name="hold_marker" type="Marker2D" parent="visual/AnimatedSprite2D/arm_root"]
-position = Vector2(-1.9e+06, -68)
+position = Vector2(1.6e+06, -89)
 
 [node name="grab_child_marker" type="Marker2D" parent="."]
 unique_name_in_owner = true

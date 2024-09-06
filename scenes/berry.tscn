@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://doefmbuaro0q5"]
+[gd_scene load_steps=4 format=3 uid="uid://d0m6llukr7veb"]
 
 [ext_resource type="Script" path="res://code/game/edible.gd" id="1_6aee4"]
 [ext_resource type="SpriteFrames" uid="uid://c116gu61mlbt8" path="res://assets/hidef/static_pickups/berry.xml" id="1_gfdy7"]

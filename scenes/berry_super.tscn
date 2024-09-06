@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://411cbhyucp7t"]
+
+[ext_resource type="PackedScene" uid="uid://d0m6llukr7veb" path="res://scenes/berry.tscn" id="1_ov3bc"]
+[ext_resource type="Texture2D" uid="uid://bhyx4f4t0yyy3" path="res://assets/hidef/static_pickups/berry.png" id="2_04mku"]
+
+[node name="Berry" instance=ExtResource("1_ov3bc")]
+is_transformation_food = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="visual" index="0"]
+amount = 11
+lifetime = 0.3
+texture = ExtResource("2_04mku")
+direction = Vector2(1, -1)
+spread = 180.0
+initial_velocity_min = 107.14
+initial_velocity_max = 328.57
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+color = Color(1, 0.470348, 0.631592, 1)
+
+[node name="AnimatedSprite2D" parent="visual" index="1"]
+modulate = Color(0.591497, 0.5673, 0.61, 1)

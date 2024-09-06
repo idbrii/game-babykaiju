@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=4 uid="uid://c14r2up20yp4l"]
+[gd_scene load_steps=12 format=4 uid="uid://c14r2up20yp4l"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_x52t5"]
-[ext_resource type="PackedScene" path="res://scenes/berry.tscn" id="2_umyia"]
+[ext_resource type="PackedScene" uid="uid://d0m6llukr7veb" path="res://scenes/berry.tscn" id="2_umyia"]
 [ext_resource type="Texture2D" uid="uid://cwyyahfhuyuml" path="res://assets/hidef/backgrounds/BG2/sky2.png" id="3_5cnqx"]
-[ext_resource type="PackedScene" uid="uid://pbf3l3hfrtbo" path="res://scenes/kaiju_teen.tscn" id="3_hcj37"]
 [ext_resource type="PackedScene" uid="uid://c5ogj7gf3f76" path="res://scenes/kaiju_baby.tscn" id="4_5q4xh"]
 [ext_resource type="Texture2D" uid="uid://b42w621sj2jkw" path="res://assets/hidef/backgrounds/BG2/Bhill.png" id="4_wupnw"]
 [ext_resource type="Texture2D" uid="uid://doy8p8het6y32" path="res://assets/hidef/backgrounds/BG2/Fhill.png" id="5_3d0oi"]
 [ext_resource type="Texture2D" uid="uid://bwdbbfylr1bdt" path="res://assets/hidef/backgrounds/BG2/cloud1.png" id="6_jeoee"]
 [ext_resource type="Texture2D" uid="uid://cu4dtavk5f2dn" path="res://assets/hidef/backgrounds/BG2/water.png" id="7_mpysh"]
-[ext_resource type="PackedScene" uid="uid://8vyt82caoc73" path="res://scenes/trigger_player_text.tscn" id="10_xbtue"]
+[ext_resource type="Script" path="res://code/game/foodcollection.gd" id="8_jfbp4"]
+[ext_resource type="PackedScene" uid="uid://411cbhyucp7t" path="res://scenes/berry_super.tscn" id="9_d7p7q"]
+[ext_resource type="PackedScene" path="res://scenes/trigger_player_text.tscn" id="10_xbtue"]
 
 [node name="Level" node_paths=PackedStringArray("spawn_target") instance=ExtResource("1_x52t5")]
 editor_description = "With baby kaiju, you collect lots of berries and then they turn into teen kaiju and you leap out of the room."
@@ -33,7 +34,10 @@ texture = ExtResource("5_3d0oi")
 position = Vector2(174, 116)
 texture = ExtResource("6_jeoee")
 
-[node name="Food" type="Node2D" parent="." index="2"]
+[node name="Food" type="Node2D" parent="." index="2" node_paths=PackedStringArray("_berry_spawn")]
+script = ExtResource("8_jfbp4")
+_final_berry = ExtResource("9_d7p7q")
+_berry_spawn = NodePath("../SuperBerrySpawnpoint")
 
 [node name="Berry" parent="Food" index="0" instance=ExtResource("2_umyia")]
 position = Vector2(149, 124)
@@ -63,16 +67,7 @@ position = Vector2(1226, 268)
 position = Vector2(1022, 81)
 
 [node name="SuperBerrySpawnpoint" type="Marker2D" parent="." index="3"]
-position = Vector2(1132, 1030)
-
-[node name="KaijuTeen" parent="SuperBerrySpawnpoint" index="0" instance=ExtResource("3_hcj37")]
-
-[node name="Label" type="Label" parent="SuperBerrySpawnpoint/KaijuTeen" index="8"]
-offset_left = -43.0
-offset_top = -220.0
-offset_right = 49.0
-offset_bottom = -197.0
-text = "kaiju spawns when you eat berry"
+position = Vector2(1226, 855)
 
 [node name="BabySpawn" type="Marker2D" parent="." index="4"]
 position = Vector2(171, 638)

@@ -1,0 +1,4 @@
+﻿<TextureAtlas imagePath="fire.png">
+	<SubTexture name="fire instance 10000" x="0" y="0" w="234" h="255"/>
+	<SubTexture name="fire instance 10001" x="234" y="0" w="234" h="255"/>
+</TextureAtlas>

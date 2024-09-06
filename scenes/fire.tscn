@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://limd4cq8vbqb"]
+
+[ext_resource type="SpriteFrames" uid="uid://dodx16lohybca" path="res://assets/anim/fire/fire.xml" id="1_gvfq6"]
+[ext_resource type="Script" path="res://scenes/fire.gd" id="1_yfi2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlgxv"]
+size = Vector2(200, 2000)
+
+[node name="Fire" type="Node2D" node_paths=PackedStringArray("area")]
+script = ExtResource("1_yfi2c")
+area = NodePath("Area2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_gvfq6")
+animation = &"fire instance 1"
+frame_progress = 0.404976
+speed_scale = 0.7
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rlgxv")

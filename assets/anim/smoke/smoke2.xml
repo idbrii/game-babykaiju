@@ -1,0 +1,22 @@
+﻿<TextureAtlas imagePath="smoke2.png">
+	<SubTexture name="smoke1 instance 10000" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10001" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10002" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10003" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10004" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10005" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10006" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10007" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10008" x="0" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10009" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10010" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10011" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10012" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10013" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10014" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10015" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10016" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10017" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10018" x="460" y="0" w="460" h="504"/>
+	<SubTexture name="smoke1 instance 10019" x="460" y="0" w="460" h="504"/>
+</TextureAtlas>

@@ -48,8 +48,9 @@ func _cheat_input(event: InputEvent):
 
     elif event.is_action_pressed("cheat_teleport"):
         get_viewport().set_input_as_handled()
-        var player = get_tree().get_nodes_in_group("Player")[0]
-        if player:
+        var all_players = get_tree().get_nodes_in_group("Player")
+        if not all_players.is_empty():
+            var player = all_players[0]
             player.global_position = player.get_global_mouse_position()
 
 

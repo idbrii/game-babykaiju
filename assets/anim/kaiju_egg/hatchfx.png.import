@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k36k7s2e6gnh"
-path="res://.godot/imported/egg.png-e89a16a9345bd14c39ba19be37a18193.ctex"
+uid="uid://dvb2lyq26tkhp"
+path="res://.godot/imported/hatchfx.png-480fb334791395a05a9c6e7026a524c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hidef/kaijus/egg.png"
-dest_files=["res://.godot/imported/egg.png-e89a16a9345bd14c39ba19be37a18193.ctex"]
+source_file="res://assets/anim/kaiju_egg/hatchfx.png"
+dest_files=["res://.godot/imported/hatchfx.png-480fb334791395a05a9c6e7026a524c3.ctex"]
 
 [params]
 

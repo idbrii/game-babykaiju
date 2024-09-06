@@ -1,0 +1,16 @@
+﻿<TextureAtlas imagePath="egghatch.png">
+	<Config loop="false" framerate="24">
+	<SubTexture name="hatch0000" x="0" y="0" w="51" h="63"/>
+	<SubTexture name="hatch0001" x="51" y="0" w="51" h="63"/>
+	<SubTexture name="hatch0002" x="102" y="0" w="51" h="63"/>
+	<SubTexture name="hatch0003" x="153" y="0" w="51" h="63"/>
+	<SubTexture name="hatch0004" x="204" y="0" w="51" h="63"/>
+	<SubTexture name="hatch0005" x="0" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0006" x="51" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0007" x="102" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0008" x="153" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0009" x="204" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0010" x="0" y="126" w="51" h="63"/>
+	<SubTexture name="hatch0011" x="204" y="63" w="51" h="63"/>
+	<SubTexture name="hatch0012" x="51" y="126" w="51" h="63"/>
+</TextureAtlas>

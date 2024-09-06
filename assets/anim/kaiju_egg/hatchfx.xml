@@ -1,0 +1,8 @@
+﻿<TextureAtlas imagePath="hatchfx.png">
+	<Config loop="false" framerate="24">
+	<SubTexture name="hatchfx0000" x="0" y="0" w="62" h="36"/>
+	<SubTexture name="hatchfx0001" x="62" y="0" w="62" h="36"/>
+	<SubTexture name="hatchfx0002" x="0" y="36" w="62" h="36"/>
+	<SubTexture name="hatchfx0003" x="62" y="36" w="62" h="36"/>
+	<SubTexture name="hatchfx0004" x="0" y="72" w="62" h="36"/>
+</TextureAtlas>

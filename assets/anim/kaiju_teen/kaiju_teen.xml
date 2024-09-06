@@ -1,4 +1,30 @@
 
+<TextureAtlas imagePath="eat_fall.png">
+	<SubTexture name="eat_fall0000" x="0" y="0" w="136" h="224"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="eat_idle.png">
+	<SubTexture name="eat_idle0000" x="0" y="0" w="130" h="192"/>
+	<SubTexture name="eat_idle0001" x="130" y="0" w="130" h="192"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="eat_jump.png">
+	<Config loop="false" framerate="24">
+	<SubTexture name="eat_jump0000" x="0" y="0" w="169" h="240"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="eat_jump.png">
+	<Config loop="false" framerate="16">
+	<SubTexture name="eat_land0001" x="169" y="0" w="169" h="240"/>
+</TextureAtlas>
+
+<TextureAtlas imagePath="eat_run.png">
+	<SubTexture name="eat_run0000" x="0" y="0" w="189" h="202"/>
+	<SubTexture name="eat_run0001" x="189" y="0" w="189" h="202"/>
+	<SubTexture name="eat_run0002" x="0" y="202" w="189" h="202"/>
+	<SubTexture name="eat_run0003" x="189" y="202" w="189" h="202"/>
+</TextureAtlas>
+
 <TextureAtlas imagePath="teen_fall.png">
 	<SubTexture name="fall0000" x="0" y="0" w="136" h="224"/>
 </TextureAtlas>

@@ -1,0 +1,3 @@
+<TextureAtlas imagePath="berry.png">
+	<SubTexture name="static0000" x="0" y="0" w="43" h="47"/>
+</TextureAtlas>

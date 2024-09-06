@@ -16,7 +16,7 @@ grows into a rideable teen and then a full grown out of control monster."
 config/tags=PackedStringArray("2d", "created_by_me", "platformer")
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://assets/hidef/static_pickups/berry.png"
+config/icon="res://assets/anim/berry/berry.png"
 
 [autoload]
 

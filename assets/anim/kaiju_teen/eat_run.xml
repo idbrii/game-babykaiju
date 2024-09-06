@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="eat_run.png">
+	<SubTexture name="eat_run0000" x="0" y="0" w="189" h="202"/>
+	<SubTexture name="eat_run0001" x="189" y="0" w="189" h="202"/>
+	<SubTexture name="eat_run0002" x="0" y="202" w="189" h="202"/>
+	<SubTexture name="eat_run0003" x="189" y="202" w="189" h="202"/>
+</TextureAtlas>

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://411cbhyucp7t"]
+
+[ext_resource type="PackedScene" uid="uid://d0m6llukr7veb" path="res://scenes/berry.tscn" id="1_ov3bc"]
+[ext_resource type="Texture2D" uid="uid://dp0b1jagatlct" path="res://assets/anim/berry/superberry.png" id="2_jximm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnm66"]
+atlas = ExtResource("2_jximm")
+region = Rect2(3, 0, 50, 57)
+
+[node name="Berry" instance=ExtResource("1_ov3bc")]
+is_transformation_food = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="visual" index="0"]
+amount = 11
+lifetime = 0.3
+texture = SubResource("AtlasTexture_bnm66")
+direction = Vector2(1, -1)
+spread = 180.0
+initial_velocity_min = 107.14
+initial_velocity_max = 328.57
+scale_amount_min = 0.0
+scale_amount_max = 0.2
+
+[node name="AnimatedSprite2D" parent="visual" index="1"]
+animation = &"superberry"
+autoplay = "superberry"

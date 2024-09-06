@@ -68,6 +68,12 @@ func release(holder: PhysicsBody2D):
     _body.remove_collision_exception_with(holder)
 
 
+func force_drop():
+    if not current_holder:
+        return
+    current_holder.drop_held_object()
+
+
 func _physics_process(_dt):
     if is_held:
         _body.global_position = target_marker.global_position

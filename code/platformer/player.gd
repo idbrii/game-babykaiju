@@ -56,6 +56,7 @@ var _block_input := false
 var _input : Baton
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
+var eat_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
 
@@ -402,6 +403,7 @@ func _tick_timers(dt: float) -> void:
     jump_buffer_timer -= dt
     dash_cooldown_timer -= dt
     dash_duration_timer -= dt
+    eat_timer -= dt
 
 # Could be static, but don't want the warning.
 func expired(timer: float) -> bool:
@@ -514,6 +516,12 @@ func climb_movement(dt: float) -> void:
     if x_state.should_abort and y_state.should_abort:
         return
 
+
+func ate_bite():
+    eat_timer = 1  # for one second
+
+func is_eating():
+    ticking(eat_timer)
 
 # Grabbing {{{1
 @onready var _grab_arms := $"%arm_root/grab_arms"

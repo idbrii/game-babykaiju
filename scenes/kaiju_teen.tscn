@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://pbf3l3hfrtbo"]
+[gd_scene load_steps=16 format=3 uid="uid://deb4eejnmbkji"]
 
 [ext_resource type="Script" path="res://code/platformer/player.gd" id="1_lraxt"]
 [ext_resource type="Script" path="res://code/platformer/ag_player.gd" id="2_a3s2x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://code/game/rideable.gd" id="6_ilp53"]
 [ext_resource type="Script" path="res://code/game/teenkaiju.gd" id="6_jrq0a"]
 [ext_resource type="Script" path="res://code/game/bouncer.gd" id="8_7p17h"]
+[ext_resource type="PackedScene" path="res://scenes/kaiju_full.tscn" id="9_iojbo"]
 [ext_resource type="Script" path="res://code/game/stomach.gd" id="9_p5hj7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eiv0d"]
@@ -168,3 +169,4 @@ shape = SubResource("CircleShape2D_bgvu4")
 [node name="Stomach" type="Node2D" parent="." node_paths=PackedStringArray("anim")]
 script = ExtResource("9_p5hj7")
 anim = NodePath("../visual/AnimatedSprite2D")
+replacement_for_self_on_transform = ExtResource("9_iojbo")

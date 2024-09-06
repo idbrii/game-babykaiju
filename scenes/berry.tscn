@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://doefmbuaro0q5"]
+[gd_scene load_steps=5 format=3 uid="uid://d0m6llukr7veb"]
 
 [ext_resource type="Script" path="res://code/game/edible.gd" id="1_6aee4"]
-[ext_resource type="SpriteFrames" uid="uid://c116gu61mlbt8" path="res://assets/hidef/static_pickups/berry.xml" id="1_gfdy7"]
+[ext_resource type="SpriteFrames" uid="uid://c116gu61mlbt8" path="res://assets/anim/berry/berry.xml" id="1_gfdy7"]
+[ext_resource type="Script" path="res://code/game/randomstartanim.gd" id="3_2t1bo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onw1p"]
 radius = 23.0217
@@ -18,5 +19,6 @@ shape = SubResource("CircleShape2D_onw1p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="visual"]
 sprite_frames = ExtResource("1_gfdy7")
-animation = &"berry"
-autoplay = "berry"
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("3_2t1bo")

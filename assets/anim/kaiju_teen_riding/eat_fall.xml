@@ -1,0 +1,3 @@
+﻿<TextureAtlas imagePath="eat_fall.png">
+	<SubTexture name="eat_fall0000" x="0" y="0" w="136" h="308"/>
+</TextureAtlas>

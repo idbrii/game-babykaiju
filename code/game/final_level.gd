@@ -33,18 +33,24 @@ func _run():
 
     if not skip_intro:
         await _wait(1)
+        kaiju.play_anim("eat_berry")
         kaiju.grow1()
         _kaiju_say("NOM NOM NOM", 20)
 
-        await _wait(2)
+        await _wait(2.1)
+        kaiju.play_anim("idle")
+
+        await _wait(0.3)
         player.set_direction(-1) ## Face left
         _player_say("Kaiju, what are you doing!?")
 
         await _wait(2)
+        kaiju.play_anim("eat_berry")
         kaiju.grow2()
         _kaiju_say("NOM NOM NOM", 45, Vector2(50, -200))
 
-        await _wait(2)
+        await _wait(2.8)
+        kaiju.play_anim("idle")
         _player_say("You have to stop! Please, Kaiju!")
 
         await _wait(2)

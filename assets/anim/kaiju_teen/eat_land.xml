@@ -1,0 +1,4 @@
+<TextureAtlas imagePath="eat_jump.png">
+	<Config loop="false" framerate="16">
+	<SubTexture name="eat_land0001" x="169" y="0" w="169" h="240"/>
+</TextureAtlas>

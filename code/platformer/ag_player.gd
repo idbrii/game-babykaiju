@@ -41,6 +41,8 @@ func _is_run(vel):
 
 # wrapper function to allow printing or other debugging
 func _play_anim(anim):
+    if _player.is_eating():
+        anim = "eat_" + anim
     _sprite_animator.play(anim)
 func _play_fx(anim):
     _scale_animator.play(anim)

@@ -12,6 +12,9 @@ func eat(food : Edible):
     var should_transform := food.is_transformation_food
     var transform_spawnpoint := food.global_position
     eat_count += 1
+    if owner is CharacterBody2D:  # player.gd
+        owner.ate_bite()
+
     # Would be nice to have an effect to replace the food?
     food.queue_free()
     anim.play("eat")

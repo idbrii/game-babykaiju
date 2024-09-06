@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://c14r2up20yp4l"]
 
 [ext_resource type="PackedScene" uid="uid://dmcsrjxc4n53b" path="res://levels/level_base.tscn" id="1_x52t5"]
-[ext_resource type="PackedScene" path="res://scenes/berry.tscn" id="2_umyia"]
+[ext_resource type="PackedScene" uid="uid://d0m6llukr7veb" path="res://scenes/berry.tscn" id="2_umyia"]
 [ext_resource type="Texture2D" uid="uid://cwyyahfhuyuml" path="res://assets/hidef/backgrounds/BG2/sky2.png" id="3_5cnqx"]
 [ext_resource type="PackedScene" uid="uid://c5ogj7gf3f76" path="res://scenes/kaiju_baby.tscn" id="4_5q4xh"]
 [ext_resource type="Texture2D" uid="uid://b42w621sj2jkw" path="res://assets/hidef/backgrounds/BG2/Bhill.png" id="4_wupnw"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bwdbbfylr1bdt" path="res://assets/hidef/backgrounds/BG2/cloud1.png" id="6_jeoee"]
 [ext_resource type="Texture2D" uid="uid://cu4dtavk5f2dn" path="res://assets/hidef/backgrounds/BG2/water.png" id="7_mpysh"]
 [ext_resource type="Script" path="res://code/game/foodcollection.gd" id="8_jfbp4"]
-[ext_resource type="PackedScene" path="res://scenes/berry_super.tscn" id="9_d7p7q"]
-[ext_resource type="PackedScene" uid="uid://8vyt82caoc73" path="res://scenes/trigger_player_text.tscn" id="10_xbtue"]
+[ext_resource type="PackedScene" uid="uid://411cbhyucp7t" path="res://scenes/berry_super.tscn" id="9_d7p7q"]
+[ext_resource type="PackedScene" path="res://scenes/trigger_player_text.tscn" id="10_xbtue"]
 
 [node name="Level" node_paths=PackedStringArray("spawn_target") instance=ExtResource("1_x52t5")]
 editor_description = "With baby kaiju, you collect lots of berries and then they turn into teen kaiju and you leap out of the room."

@@ -6,10 +6,7 @@
 
 [node name="Twinkle" parent="." instance=ExtResource("1_qua7k")]
 position = Vector2(-50, -157)
-animation = &"fx"
 autoplay = "fx"
-frame = 0
-frame_progress = 0.0
 
 [node name="Twinkle2" parent="." instance=ExtResource("1_qua7k")]
 position = Vector2(58, -95)

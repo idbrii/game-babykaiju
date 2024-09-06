@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsbyuxx05qemx"
-path="res://.godot/imported/Fbuilding.png-cf5879af557836663716903d64072575.ctex"
+uid="uid://ddxc57t2w6o1r"
+path="res://.godot/imported/2cloud.png-9852b6896de9e160c4fd205b4c9af560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hidef/backgrounds/Fbuilding.png"
-dest_files=["res://.godot/imported/Fbuilding.png-cf5879af557836663716903d64072575.ctex"]
+source_file="res://assets/hidef/backgrounds/BG1/2cloud.png"
+dest_files=["res://.godot/imported/2cloud.png-9852b6896de9e160c4fd205b4c9af560.ctex"]
 
 [params]
 

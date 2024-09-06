@@ -14,7 +14,7 @@ func _ready():
     pass
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
     if not is_chasing and not is_retreating:
         return
 

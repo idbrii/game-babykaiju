@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5pd3gduenv1n"]
 
-[ext_resource type="Texture2D" uid="uid://crxaislpeo3t4" path="res://assets/hidef/backgrounds/sky.png" id="1_jgt1e"]
-[ext_resource type="Texture2D" uid="uid://vs0x5vgweckd" path="res://assets/hidef/backgrounds/Bbuilding.png" id="2_gu8f7"]
+[ext_resource type="Texture2D" uid="uid://crxaislpeo3t4" path="res://assets/hidef/backgrounds/BG3/sky.png" id="1_jgt1e"]
+[ext_resource type="Texture2D" uid="uid://vs0x5vgweckd" path="res://assets/hidef/backgrounds/BG3/Bbuilding.png" id="2_gu8f7"]
 
 [node name="Background" type="Node2D"]
 position = Vector2(1051, 325)
 scale = Vector2(0.7, 0.7)
 
 [node name="SkyRoot" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="Sky" type="Sprite2D" parent="SkyRoot"]
 position = Vector2(11.7858, 0)
@@ -17,13 +16,14 @@ texture = ExtResource("1_jgt1e")
 
 [node name="Sky2" type="Sprite2D" parent="SkyRoot"]
 position = Vector2(1920, 0)
-scale = Vector2(1, 1)
+texture = ExtResource("1_jgt1e")
+
+[node name="Sky3" type="Sprite2D" parent="SkyRoot"]
+position = Vector2(4945.71, 17.1429)
 texture = ExtResource("1_jgt1e")
 
 [node name="BuildingsRoot" type="Node2D" parent="."]
 z_index = 2
-scale = Vector2(1, 1)
 
 [node name="Buildings1" type="Sprite2D" parent="BuildingsRoot"]
-scale = Vector2(1, 1)
 texture = ExtResource("2_gu8f7")

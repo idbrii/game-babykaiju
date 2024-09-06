@@ -49,7 +49,8 @@ func _cheat_input(event: InputEvent):
     elif event.is_action_pressed("cheat_teleport"):
         get_viewport().set_input_as_handled()
         var player = get_tree().get_nodes_in_group("Player")[0]
-        player.global_position = player.get_global_mouse_position()
+        if player:
+            player.global_position = player.get_global_mouse_position()
 
 
 func _swap_fullscreen_mode():

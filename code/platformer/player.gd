@@ -171,6 +171,12 @@ func _physics_process(dt: float) -> void:
             else:
                 apply_push_to_collisions()
 
+        if is_reaching and not _held_object:
+            var bodies = $"%Grabber".get_overlapping_bodies()
+            for body in bodies:
+                if body.is_in_group("pushable"):
+                    grab_object(body.get_node("Grabbable"))
+
         if _held_object and not is_reaching:
             drop_held_object()
     else:

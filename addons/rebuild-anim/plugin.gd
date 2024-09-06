@@ -28,7 +28,8 @@ func _on_btn_pressed():
                 var anim_path = path.path_join(file_name)
                 print("\t", "Found directory: ", file_name, " Full path: ", anim_path)
                 var f = build_anims(anim_path, file_name)
-                exported.append(f)
+                if f:
+                    exported.append(f)
             else:
                 print("\t", "Found file: ", file_name, " ignoring")
             file_name = dir.get_next()
@@ -55,6 +56,11 @@ func build_anims(path, anim):
     var files = Array(dir.get_files())
     files = files.filter(is_xml)
     files.erase(output_fname)
+    if files.is_empty():
+        print("\t", "No files found for ", path, " (or only one that uses folder name).")
+        return
+
+
     var lines = []
     for fpath in files:
         var file = FileAccess.open(path.path_join(fpath), FileAccess.READ)

@@ -10,3 +10,4 @@ tile_map_data = PackedByteArray("AAAAAAoAAgAKAAAAAAAAAAsAAgAJAAIAAAAAAAwAAgAJAAI
 
 [node name="Egg" parent="." index="2" instance=ExtResource("2_chdhc")]
 position = Vector2(1692, 709)
+throw_power = 1500.0

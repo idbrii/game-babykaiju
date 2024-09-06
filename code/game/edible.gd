@@ -3,6 +3,8 @@ extends Area2D
 
 @export var is_transformation_food := false
 
+var can_eat := true
+
 
 func _ready():
     self.area_entered.connect(_on_area_entered)
@@ -24,9 +26,13 @@ func _on_body_entered(eater):
 
 
 func _try_feed(eater):
+    if not can_eat:
+        return
+
     if eater.is_in_group("Player"):
         eater = eater.get_held_body()
     if eater and eater.is_in_group("Kaiju"):
+        can_eat = false
         await get_tree().process_frame
         # Don't allow another eater
         monitoring = false

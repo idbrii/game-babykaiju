@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://code/platformer/level.gd" id="1_gf4wa"]
 [ext_resource type="PackedScene" uid="uid://sixdkusjjf8l" path="res://levels/level_requirements.tscn" id="2_5xca3"]
 [ext_resource type="PackedScene" uid="uid://dkdyjax401cle" path="res://levels/level_99_final.tscn" id="5_b6sg5"]
-[ext_resource type="PackedScene" uid="uid://c14r2up20yp4l" path="res://levels/level_2.tscn" id="5_vmi75"]
+[ext_resource type="PackedScene" uid="uid://dvg5xi8bf2ta0" path="res://levels/level_2.tscn" id="5_vmi75"]
 [ext_resource type="PackedScene" uid="uid://bbwum41c2c2qq" path="res://levels/level_3.tscn" id="6_unbv5"]
 [ext_resource type="PackedScene" uid="uid://ciih7ia18d4fq" path="res://levels/level_0.tscn" id="6_usjui"]
 [ext_resource type="PackedScene" uid="uid://dpccu5sotdvbt" path="res://levels/level_1.tscn" id="7_sckau"]

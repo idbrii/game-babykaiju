@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://mp7s6uri6o70"]
+[gd_scene load_steps=4 format=3 uid="uid://1wje05krmm6x"]
 
 [ext_resource type="Script" path="res://code/game/hatchable.gd" id="1_yb6qn"]
-[ext_resource type="SpriteFrames" uid="uid://bpilobwejm4ok" path="res://assets/hidef/kaijus/egg.xml" id="2_yj4sa"]
+[ext_resource type="SpriteFrames" uid="uid://bw2m8syxbnbxa" path="res://assets/anim/kaiju_egg/kaiju_egg.xml" id="2_nyopi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bn67"]
 radius = 27.0185
@@ -15,10 +15,16 @@ shape = SubResource("CircleShape2D_0bn67")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -27)
-sprite_frames = ExtResource("2_yj4sa")
+sprite_frames = ExtResource("2_nyopi")
 animation = &"egg"
+autoplay = "egg"
 frame = 1
-frame_progress = 0.568252
+
+[node name="fx" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(-2, -27)
+sprite_frames = ExtResource("2_nyopi")
+animation = &"hatchfx"
 
 [node name="ThrowMarker" type="Marker2D" parent="."]
 position = Vector2(27, -51)

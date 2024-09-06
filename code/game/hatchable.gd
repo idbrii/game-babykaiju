@@ -5,11 +5,11 @@ const KaijuBaby = preload("res://scenes/kaiju_baby.tscn")
 
 @export var throw_power := 1500.0
 @onready var _sprite_animator := $AnimatedSprite2D
+@onready var _fx := $AnimatedSprite2D/fx
 
 
 func _ready():
     self.body_entered.connect(_on_body_entered)
-    _sprite_animator.pause()
 
 
 func _on_body_entered(toucher):
@@ -21,8 +21,14 @@ func _on_body_entered(toucher):
     await get_tree().process_frame
     monitoring = false
 
-    _sprite_animator.play("egg")
-    await get_tree().create_timer(1).timeout
+    _fx.visible = true
+    _fx.reparent(owner.get_parent())
+
+    _fx.play("hatchfx")
+    _sprite_animator.play("hatch")
+    await get_tree().create_timer(0.2).timeout
+    _fx.play("hatchfx")
+    await _sprite_animator.animation_finished
 
     visible = false
     var baby = KaijuBaby.instantiate()

@@ -3,12 +3,12 @@
 importer="com.what-is-a-git.godot-sparrow-importer"
 type="SpriteFrames"
 uid="uid://bpilobwejm4ok"
-path="res://.godot/imported/egg.xml-5dc7282ed59584dbd3b1137b142b2da0.res"
+path="res://.godot/imported/egg.xml-8eff927dc68b76da3660f492b97d05ad.res"
 
 [deps]
 
-source_file="res://assets/hidef/kaijus/egg.xml"
-dest_files=["res://.godot/imported/egg.xml-5dc7282ed59584dbd3b1137b142b2da0.res"]
+source_file="res://assets/anim/kaiju_egg/egg.xml"
+dest_files=["res://.godot/imported/egg.xml-8eff927dc68b76da3660f492b97d05ad.res"]
 
 [params]
 

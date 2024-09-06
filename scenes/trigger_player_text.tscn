@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://8vyt82caoc73"]
+
+[ext_resource type="Script" path="res://scenes/trigger_player_text.gd" id="1_fmfwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlgxv"]
+size = Vector2(243, 2000)
+
+[node name="TriggerText" type="Node2D" node_paths=PackedStringArray("area")]
+script = ExtResource("1_fmfwl")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-21.5, 0)
+shape = SubResource("RectangleShape2D_rlgxv")

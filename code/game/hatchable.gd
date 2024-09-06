@@ -30,6 +30,8 @@ func _on_body_entered(toucher):
     baby.add_collision_exception_with(toucher)
     baby.global_position = global_position
 
+    await get_tree().create_timer(0.5).timeout
+
     var throw = global_position.direction_to($ThrowMarker.global_position) * throw_power
     baby.apply_central_impulse(throw)
 

@@ -98,12 +98,13 @@ _data = {
 "RESET": SubResource("Animation_03ogu")
 }
 
-[node name="KaijuFull" type="CharacterBody2D" node_paths=PackedStringArray("anim_player") groups=["Kaiju"]]
+[node name="KaijuFull" type="CharacterBody2D" node_paths=PackedStringArray("anim_sprite", "anim_player") groups=["Kaiju"]]
 z_index = 10
 collision_layer = 4
 motion_mode = 1
 floor_snap_length = 16.0
 script = ExtResource("1_26bmo")
+anim_sprite = NodePath("visual/AnimatedSprite2D")
 anim_player = NodePath("visual/AnimationPlayer")
 
 [node name="SquareCollisionShape" type="CollisionShape2D" parent="."]
@@ -128,6 +129,7 @@ libraries = {
 position = Vector2(-26.5, -172)
 sprite_frames = ExtResource("2_5fgqu")
 animation = &"idle"
+speed_scale = 4.0
 offset = Vector2(0, -12)
 
 [node name="placeholder" type="Sprite2D" parent="visual"]

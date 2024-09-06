@@ -31,6 +31,8 @@ func _run():
     player = get_tree().get_first_node_in_group("Player")
     player.set_block_input(true)
 
+    kaiju.play_anim("idle")
+
     if not skip_intro:
         await _wait(1)
         kaiju.grow1()
@@ -48,15 +50,23 @@ func _run():
         _player_say("You have to stop! Please, Kaiju!")
 
         await _wait(2)
+        kaiju.play_anim("roar")
         _kaiju_say("RAAAAARRRR", 60, Vector2(0, -100))
 
-        await _wait(2)
+        await _wait(1.5)
+        kaiju.play_anim("idle")
+
+        await _wait(0.5)
         _player_say("Kaiju, please! It's me!")
 
         await _wait(2)
+        kaiju.play_anim("roar")
         _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80, Vector2(0, -50))
 
-        await _wait(2)
+        await _wait(2.5)
+        kaiju.play_anim("idle")
+
+        await _wait(0.5)
         _player_say("Oh no!")
 
         await _wait(1)
@@ -91,8 +101,21 @@ func _on_kaiju_catch_player(_p: Node2D):
     player.set_block_input(true)
     fixed_speed_camera.stop_moving()
     _kaiju_say("NOM NOM NOM!", 80)
+    kaiju.play_anim("eat")
 
-    await _wait(3)
+    player.visible = false ## hide the player. The eat anim has the player in it already
+
+    await _wait(2.2)
+    kaiju.play_anim("idle")
+
+    await _wait(1.5)
+    kaiju.play_anim("roar")
+    _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80)
+
+    await _wait(1.5)
+    kaiju.play_anim("idle")
+
+    await _wait(1.5)
 
     _kaiju_say("", 80)
 
@@ -121,9 +144,13 @@ func _on_player_escaped(_p: Node2D):
     player.set_block_input(true)
 
     await _wait(1)
+    kaiju.play_anim("roar")
     _kaiju_say("RAAAAAAAAAAAAAAAAAAARRRR", 80)
 
-    await _wait(4)
+    await _wait(2.5)
+    kaiju.play_anim("idle")
+
+    await _wait(1.5)
     _kaiju_say("", 80)
     kaiju.retreat()
 

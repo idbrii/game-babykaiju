@@ -3,6 +3,8 @@ extends Node
 const Player = preload("res://code/platformer/Player.tscn")
 const DEFAULT_SPAWN_POS = Vector2(400, 300)
 
+@export var is_main_menu := false
+
 var CHEATS_ENABLED := true
 
 func _input(event: InputEvent):
@@ -12,7 +14,11 @@ func _input(event: InputEvent):
     elif event.is_action_pressed("quit_game"):
         get_viewport().set_input_as_handled()
         get_tree().quit()
-    elif event.is_action_pressed("spawn_player"):
+
+    if is_main_menu:
+        return
+
+    if event.is_action_pressed("spawn_player"):
         get_viewport().set_input_as_handled()
         var spawn_position = DEFAULT_SPAWN_POS
 

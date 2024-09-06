@@ -11,5 +11,7 @@ offset_right = 1920.0
 offset_bottom = 1088.0
 color = Color(0.101961, 0.0901961, 0.286275, 1)
 
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = ExtResource("6_0pdgj")

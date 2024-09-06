@@ -133,7 +133,7 @@ func _on_kaiju_catch_player(_p: Node2D):
     game_over_quit_button.connect("pressed", _on_quit_pressed)
 
 func _on_player_escaped(_p: Node2D):
-    if not player.is_in_group("Player"):
+    if not _p.is_in_group("Kaiju"):
         return
 
     fixed_speed_camera.stop_moving()

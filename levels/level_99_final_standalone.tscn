@@ -186,14 +186,15 @@ shape = SubResource("RectangleShape2D_gmgdb")
 position = Vector2(690, 872)
 
 [node name="EndArea" type="Area2D" parent="." index="8"]
-position = Vector2(6685, 5)
+position = Vector2(5613, 61)
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea" index="0"]
 position = Vector2(0, 539)
 shape = SubResource("RectangleShape2D_qll5u")
 
 [node name="Trees" type="Sprite2D" parent="EndArea" index="1"]
-position = Vector2(183, -22)
+position = Vector2(1247, -74)
 texture = ExtResource("12_20ldv")
 
 [node name="Canvas" type="CanvasLayer" parent="." index="9"]

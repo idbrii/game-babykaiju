@@ -23,6 +23,10 @@ Similar to feeding baby yoshi: https://youtu.be/t6B30vCAlcU?si=FJi6_j3HrXKpJxHA&
 
 ## Controls
 
+* wasd/arrows or left stick: Move
+* `Space` or A: Jump
+* Hold `k` or X: Grab, dismount kaiju
+* `j` or B: Dash
 * `Alt-Enter`: Toggle fullscreen
 * `Escape`: Quit
 

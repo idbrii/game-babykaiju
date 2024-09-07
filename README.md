@@ -37,10 +37,9 @@ Similar to feeding baby yoshi: https://youtu.be/t6B30vCAlcU?si=FJi6_j3HrXKpJxHA&
 
 ## Credits
 
+Created by Agustin, Anne-Marie, Grace, and David
+
 ### Libraries
 
 * TheoTheTorch - [Movement 2](https://github.com/TheoTheTorch/MOVEMENT-2)
 
-### Art
-
-* Kenney Vleugels - [Abstract Platformer](https://kenney.nl/assets/abstract-platformer) (CC0)
